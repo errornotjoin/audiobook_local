@@ -1,0 +1,72 @@
+main
+{
+    display: grid;
+    grid-template-columns: 50% 50% ;
+   grid-template-areas:
+    "box1 box2"
+    "box3 box2";
+}
+.image_and_creaters
+{
+    width: 98%;
+    position: relative;
+    left: 3%;
+    grid-area: box1;
+    
+}
+.image_and_creaters img
+{
+    width: 80%;
+    position: relative;
+    left: 5%;
+}
+.the_creaters_and_info
+{
+    display: flex; 
+    gap: 2%;
+    position: relative;
+    right: 2%;
+}
+
+.the_creaters_and_info div
+{
+    background-color: #0c2449;
+    width: 80%;
+    border-radius: 10px;
+    text-align: center;
+}
+.chapters_and_add_more
+{
+    width: 98%;
+    background-color: #0c2449;
+    grid-area: box2;
+
+
+}
+.audio_play
+{
+    grid-area: box3;
+    height: 300px;
+}
+.the_chapter_buttons_and_other button
+{
+    width: 95%;
+    margin-bottom: 10px;
+        background-color: #061327;
+        border: 3px solid black;
+        color: snow;
+}
+.the_main_audio_items
+{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 15% 60% 15%;
+    gap: 3%;
+}
+.outer_track,.the_main_audio_items button
+{
+    height: 50px;
+    width: 100%;
+    background-color: #0c2449;
+    color: snow;
+}

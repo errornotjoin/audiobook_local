@@ -1,0 +1,49 @@
+form
+{
+    background-color: #081933;
+    height: 250px;
+    width: 50%;
+    border-radius: 10px;
+    position: relative;
+    top: 250px;
+    left: 25%;
+    box-shadow: 0px 0px 10px #161616;
+}
+form div
+{
+    position: relative;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+form div input
+{
+    width: 95%;
+    height: 50px;
+    background-color: #020013;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    left:2.5%;
+    margin-bottom: 10px;
+    color: snow;
+
+
+}
+form div button
+{
+    width: 95%;
+    height: 50px;
+    background-color: #020013;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    left:2.5%;
+    color: snow;
+}
+form div button:hover, form div input:hover
+{
+    background-color: #0e3268;
+    box-shadow: 0px 0px 10px #161616;
+}

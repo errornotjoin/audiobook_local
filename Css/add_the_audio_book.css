@@ -1,0 +1,97 @@
+form
+{
+    background-color: #081933;
+    height: 500px;
+    width: 55%;
+    border-radius: 10px;
+    position: relative;
+    top: 100px;
+    left: 20%;
+    box-shadow: 0px 0px 10px #161616;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main_items
+{
+    position: relative;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 95%;
+}
+.main_items input
+{
+    width: 95%;
+    height: 50px;
+    background-color: #020013;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    left:2.5%;
+    margin-bottom: 10px;
+    color: snow;
+}
+.some_info,.file_upload
+{
+    display:grid;
+    grid-template-columns:  35% 35% 35%;
+    gap: 10px;
+    POSITION: relative;
+    width: 95%;
+    left: 1%;
+    text-align: center;
+    
+}
+.some_info input
+{
+    width:85%;
+    text-align: center;
+}
+.some_info input:last-of-type
+{
+    width: 80%;
+}
+.file_upload
+{
+    grid-template-columns:  45%  45%;
+}
+.file_upload input
+{
+    width: 100%;
+    text-align: center;
+    align-items: center;
+}
+textarea
+{
+    width: 95%;
+    height: 200px;
+    background-color: #020013;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    left:2.5%;
+    margin-bottom: 10px;
+    color: snow;
+}
+.next_step
+{
+    position: relative;
+    top: 20px;
+    height: 100px;
+    width: 95%;
+
+}
+
+.next_step button
+{
+    width: 95%;
+    height: 40px;
+    background-color: #020013;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+
+    color: snow;
+}
