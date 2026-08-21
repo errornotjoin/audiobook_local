@@ -70,3 +70,46 @@ main
     background-color: #0c2449;
     color: snow;
 }
+.timing_and_name,.User_inputs
+{
+    display: flex;
+    gap: 5%;
+    width: 60%;
+    position: relative;
+    left: 17.8%;
+
+}
+.timing_and_name
+{
+    position: relative;
+    top:10px;
+}
+.timing_and_name h2,.User_inputs button
+{
+    width: 80%;
+    text-align: center;
+
+}
+.User_inputs
+{
+    position: relative;
+    top: 20px;
+}
+.User_inputs button
+{
+
+    height: 70px;
+        background-color: #0c2449;
+    color: snow;
+            border: 3px solid black;
+}
+.inner_track
+{
+    width: 1%;
+    height: 50px;
+    background-color: blue;
+}
+audio
+{
+    visibility: hidden;
+}

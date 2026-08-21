@@ -77,20 +77,25 @@
         echo "</div>";
         echo "</div>";
         echo "<div class='audio_play'>";
-        echo "<audio controls >
+        echo "<audio controls  >
         <source src=".$Json_Audiobook_file['audio_book_link']." >
         
         </audio>";
+            echo "<h2>Time Left: 2:22:02</h2>";
             echo "<div class='the_main_audio_items'>";
                 echo "<button> before </button>";
                 echo "<div class='outer_track'><div class='inner_track'></div></div>";
                 echo "<button> next </button>";
             echo "</div>";
-            echo "<div>";
+            echo "<div class='timing_and_name'>";
             echo "<h2 id='Start_time'>15:04</h2>";
             echo "<h2 id='Chapter_name'>Chapter Name</h2>";
             echo "<h2 id='Ends_at'>20:00</h2>";
             echo "</div>";
+            echo "<div class='User_inputs'>";
+                echo "<button> Stop </button>";
+                echo "<button >Start</button>";
+                echo "<button> Reset </button>";
         echo "</div>";
     ?>
     
