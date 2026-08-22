@@ -53,11 +53,10 @@
             echo  "</div>";
             echo "<div class='chapters_and_add_more'>";
             echo "<div>";
-            echo "<button>";
-            echo "+";
-            echo "</button>";
+            echo "<a href='add_time_stamps.php?book_id=".$ID_Code ."'>";
+            echo "<h2>Add Timestamps</h2>";
+            echo "</a>";
             echo "</div>";
-  
             echo "<div>";
             echo "<ol style='list-style:none;, padding-left:0;'>";
             $x = 0;
@@ -78,10 +77,10 @@
         echo "</div>";
         echo "<div class='audio_play'>";
         echo "<audio controls  >
-        <source src=".$Json_Audiobook_file['audio_book_link']." >
+        <source src=".$Json_Audiobook_file['audio_book_link']." type='audio/ogg; codecs=opus'> >
         
         </audio>";
-            echo "<h2>Time Left: 2:22:02</h2>";
+            echo "<h2 id='Total_time_Left'>Total time Left: 2:22:02</h2>";
             echo "<div class='the_main_audio_items'>";
                 echo "<button> before </button>";
                 echo "<div class='outer_track'><div class='inner_track'></div></div>";

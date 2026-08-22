@@ -1,11 +1,12 @@
 [
     {
-        "ID": "testes_6a8891c789433",
-        "title": "testes",
-        "author": "setestes",
-        "narrator": "setsetestes",
-        "duration": "23:01",
-        "cover": "images\/testes_6a8891c789433_cover.jpg",
-        "book_link_page": "book.php?ID=6a8891c789433"
+        "ID": "lord of the rings _6a89c5d69577f",
+        "title": "lord of the rings ",
+        "author": "j.r.r",
+        "narrator": "andy serkis",
+        "duration": "23:12",
+        "cover": "images\/lord_of_the_rings__6a89c5d69577f_cover.jpg",
+        "book_link_page": "book.php?ID=6a89c5d69577f",
+        "audio_book_link": "audiobook\/lord_of_the_rings__6a89c5d69577f_audiobook.opus"
     }
 ]

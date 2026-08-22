@@ -1,0 +1,40 @@
+main
+{
+    display: flex;
+    flex-direction: column;
+    background-color: #0c2449;
+    width: 60%;
+    height: 700px;
+    position: relative;
+    left: 20%;
+    border-radius: 10px;
+    gap: 2%;
+
+}
+.names_of_the_tables,.the_user_inputs
+{
+    display: grid;
+    grid-template-columns:  30% 30% 30%;
+    text-align: center;
+
+    width: 95%;
+    gap: 5%;
+    position: relative;
+    left: 2%;
+    
+}
+.names_of_the_tables
+{
+             background-color: #123c77;
+}
+.the_user_inputs input,.names_of_the_tables h2
+{
+    text-align: center;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    color: snow;
+}
+.the_user_inputs input
+{
+         background-color: #061327;
+}

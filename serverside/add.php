@@ -52,13 +52,14 @@ $format_for_json = array(
     "book_link_page" => "book.php?ID=$create_unique_id",
     "audio_book_link" => $audiobook_info
 );
-
-function Update_names($audiobook_info,$cover_art_info,  $unique_id, $title)
+//
+$update_title = str_replace(' ', '_', $title);
+function Update_names($audiobook_info,$cover_art_info,  $unique_id, $update_title)
 {
         try{
         // Update the names of the audiobook and cover art files with the unique ID and title
-        $audiobook_file_name = $title . "_" . $unique_id . "_audiobook." . pathinfo($audiobook_info['name'], PATHINFO_EXTENSION);
-        $cover_art_file_name = $title . "_" . $unique_id . "_cover." . pathinfo($cover_art_info['name'], PATHINFO_EXTENSION);
+        $audiobook_file_name = $update_title . "_" . $unique_id . "_audiobook." . pathinfo($audiobook_info['name'], PATHINFO_EXTENSION);
+        $cover_art_file_name = $update_title . "_" . $unique_id . "_cover." . pathinfo($cover_art_info['name'], PATHINFO_EXTENSION);
         //
         $audiobook_info['name'] = $audiobook_file_name; 
         $cover_art_info['name'] = $cover_art_file_name;
@@ -86,7 +87,7 @@ function upload_to_file($audiobook_info, $cover_art_info, $upload_directory_audi
     }
 
 }
-list($audiobook_info, $cover_art_info) = Update_names($audiobook_info, $cover_art_info, $create_unique_id, $title);
+list($audiobook_info, $cover_art_info) = Update_names($audiobook_info, $cover_art_info, $create_unique_id, $update_title);
 //update the cover link 
 $format_for_json['cover'] = "images/" . $cover_art_info['name'];
 $format_for_json['audio_book_link'] = "audiobook/" . $audiobook_info['name'];
