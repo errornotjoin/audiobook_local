@@ -20,6 +20,7 @@ main
     width: 95%;
     gap: 5%;
     position: relative;
+    top: 10px;
     left: 2%;
     
 }
@@ -37,4 +38,8 @@ main
 .the_user_inputs input
 {
          background-color: #061327;
+}
+.the_holder_of_the_timestamps
+{
+    height: 500px;
 }

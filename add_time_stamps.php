@@ -16,20 +16,14 @@
             <a href="index.php">Logout</a>
         </div>
     </head1er>
+    <form>
     <main>
-        <div class="add_more_things">
-            <label>Create new table :</label>
-            <input type="number">
-            <button></button>
-
-        </div>
         <div class="names_of_the_tables">
-
             <h2>Chapters Name</h2>
             <h2>Chapters Starts At (hh:mm)</h2>
             <h2>Chapters Last For (hh:mm)</h2>
         </div>
-        <div>
+        <div class="the_holder_of_the_timestamps" id="the_holder_of_the_timestamps">
 
             <?php
                 $file_localion = "Json/the_audiobook_info/";
@@ -40,14 +34,21 @@
                     {
                         echo "<div class='the_user_inputs'>";
 
-                        echo "<input type='text' value='".$Json_Audiobook_file["Chapters_names"][$x] ."'>";
-                        echo "<input type='time' value='".$Json_Audiobook_file["timestamps"][$x] ."'>";
-                        echo "<input type='time' value='".$Json_Audiobook_file["Chapters_lengths"][$x] ."'>";
+                        echo "<input type='text' name='Chapters_names_$x' value='".$Json_Audiobook_file["Chapters_names"][$x] ."'>";
+                        echo "<input type='time' name='timestamps_$x' value='".$Json_Audiobook_file["timestamps"][$x] ."'>";
+                        echo "<input type='time' name='Chapters_lengths_$x' value='".$Json_Audiobook_file["Chapters_lengths"][$x] ."'>";
                         echo "</div>";
                     }
             ?>
         </div>
+            <div class="add_more_things">
+            <label>Create new table :</label>
+            <input type="number">
+            <button></button>
+
+        </div>
     </main>
+    </form>
     
 </body>
 </html>
