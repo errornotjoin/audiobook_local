@@ -41,14 +41,19 @@
                     }
             ?>
         </div>
-            <div class="add_more_things">
+        <div class="add_more_things">
             <label>Create new table :</label>
-            <input type="number">
-            <button></button>
+            <input type="number" id="Incress_the_inputs_to_this">
+            <button type="button" id="Add_more_inputs_button" onclick="incress_the_inputs()"></button>
+            <div>
+                <input type="reset">
+                <input type="submit">
+            </div>
 
         </div>
     </main>
     </form>
+    <script src="javascript/add_more_inputs.js"></script>
     
 </body>
 </html>

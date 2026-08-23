@@ -42,4 +42,9 @@ main
 .the_holder_of_the_timestamps
 {
     height: 500px;
+    overflow-y: scroll;
+}
+.the_holder_of_the_timestamps div
+{
+    margin-bottom: 15px;
 }
