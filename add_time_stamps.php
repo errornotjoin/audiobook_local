@@ -15,9 +15,11 @@
         <div class="header_right">
             <a href="index.php">Logout</a>
         </div>
-    </head1er>
-    <form>
+    </header>
+    <form action="serverside/add_time_info.php" method="POST">
     <main>
+        <?php echo "<input type='hidden' name='book_id' value='".  $_GET["book_id"]."' >";
+        ?>
         <div class="names_of_the_tables">
             <h2>Chapters Name</h2>
             <h2>Chapters Starts At (hh:mm)</h2>
@@ -33,12 +35,14 @@
                 for($x = 0; $x <  count($Json_Audiobook_file["timestamps"]); $x++ )
                     {
                         echo "<div class='the_user_inputs'>";
+                        
 
                         echo "<input type='text' name='Chapters_names_$x' value='".$Json_Audiobook_file["Chapters_names"][$x] ."'>";
                         echo "<input type='time' name='timestamps_$x' value='".$Json_Audiobook_file["timestamps"][$x] ."'>";
                         echo "<input type='time' name='Chapters_lengths_$x' value='".$Json_Audiobook_file["Chapters_lengths"][$x] ."'>";
                         echo "</div>";
                     }
+                echo "<input type='hidden' id='Chapters_names' name='Chapters_namess' value='".  count($Json_Audiobook_file["Chapters_names"])."' >";
             ?>
         </div>
         <div class="add_more_things">

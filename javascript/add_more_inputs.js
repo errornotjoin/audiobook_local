@@ -1,7 +1,7 @@
 function incress_the_inputs()
 {
     var total_amount = Number(document.getElementById("Incress_the_inputs_to_this").value)
-    var total_all_ready_there = document.getElementById("the_holder_of_the_timestamps").children.length
+    var total_all_ready_there = document.getElementById("the_holder_of_the_timestamps").children.length -1 
 
     var the_div_holder = document.getElementById("the_holder_of_the_timestamps")
     //console.log(total_all_ready_there, total_amount);
@@ -15,7 +15,7 @@ function incress_the_inputs()
         var chater_lastfor = document.createElement("input")
 
         the_user_inputs.className = "the_user_inputs"
-        Chapter_names.name = "chater_lastfor"+the_correct_order
+        Chapter_names.name = "Chapters_names_"+the_correct_order
         Chapter_StartsAT.name = "timestamps_"+ the_correct_order
         chater_lastfor.name = "Chapters_lengths_"+the_correct_order
         
@@ -32,5 +32,7 @@ function incress_the_inputs()
         
 
         console.log(total_all_ready_there +  x );
+        var add_Chapters_names = document.getElementById("Chapters_names")
+        add_Chapters_names.value = total_all_ready_there +  x 
     }
 }
