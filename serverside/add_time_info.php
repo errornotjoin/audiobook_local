@@ -15,10 +15,8 @@
             //check if the user has removed (by emptying it) the input and to skip it
             if(empty($_POST["Chapters_names_$x"]) || empty($_POST["timestamps_$x"] ) || empty($_POST["Chapters_lengths_$x"]))
             {
-                //debugging to see what is being skipped
-                //echo $_POST["Chapters_names_$x"]. "<br>";
-                //if empty skip
-                //by just conytinuing the loop and not adding it to the new arrays
+                //if empty skip (user might have removed it by emptying the input)
+
                 continue;
             }
             //add the new data to the new arrays
@@ -30,11 +28,7 @@
     unset($Json_Audiobook_file["timestamps"]);
     unset($Json_Audiobook_file["Chapters_lengths"]);
     unset($Json_Audiobook_file["Chapters_names"]);
-    
-    echo "<br> new_timestamps: " . $new_timestamps[2] . "<br>";
-    echo "<br> new_Chapters_lengths: " . $new_Chapters_lengths[2] . "<br>";
-    echo "<br> new_Chapters_names: " . $new_Chapters_names[2] . "<br>";
-    
+
     //recreateing the list with the new data and the old data
     // as the user might have removed some of the data or to reorder the list
     $add_new_data = array_merge($Json_Audiobook_file, [

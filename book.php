@@ -60,30 +60,46 @@
             echo "<div>";
             echo "<ol style='list-style:none;, padding-left:0;'>";
             $x = 0;
-            foreach($Json_Audiobook_file["timestamps"] as $time => $value )
+            for($x = 0; $x < count($Json_Audiobook_file["Chapters_names"]); $x++)
             {//change the button
-                echo "<li class='the_chapter_buttons_and_other'>
+                $y = 0;
                 
-                        <button onlick($value)>
-                            Chapter $x — {$Json_Audiobook_file['Chapters_names'][$x]}<br>
-                            <small>(Start: $value, Length: {$Json_Audiobook_file['Chapters_lengths'][$x]})</small>
-                        </button>
-                    </li>";
-                $x++;
+                echo "<li class='the_chapter_buttons_and_other' id='the_chapter_buttons_and_other_$x'>";
+               
+                
+                
+                echo "<button class='' id='' onclick='User_pick_the_chapter($x)'>
+                ";
+
+                echo "<h2 id='Chaptername_$x'>".$Json_Audiobook_file["Chapters_names"][$x]."</h2>";
+                echo "<div>";
+                    echo "<p id='start_$x'>".$Json_Audiobook_file["timestamps"][$x]."</p>";
+                    echo "<p id=''>/</p>";
+                    echo "<p id='End_$x'>  ".$Json_Audiobook_file["Chapters_lengths"][$x]." </p>";
+                echo "</div>";
+                
+                
+                echo"
+
+                
+                
+                
+                </button>";
+                echo "<h2></h2>";
+
             }
-        }
         echo "</ol>";
         echo "</div>";
         echo "</div>";
         echo "<div class='audio_play'>";
-        echo "<audio controls  >
+        echo "<audio controls id='audio_1' preload='metadata'>
         <source src=".$Json_Audiobook_file['audio_book_link']." type='audio/ogg; codecs=opus'> >
         
         </audio>";
             echo "<h2 id='Total_time_Left'>Total time Left: 2:22:02</h2>";
             echo "<div class='the_main_audio_items'>";
                 echo "<button> before </button>";
-                echo "<div class='outer_track'><div class='inner_track'></div></div>";
+                echo "<div class='outer_track'><div class='inner_track' id='inner_track'></div></div>";
                 echo "<button> next </button>";
             echo "</div>";
             echo "<div class='timing_and_name'>";
@@ -95,12 +111,14 @@
                 echo "<button> Stop </button>";
                 echo "<button >Start</button>";
                 echo "<button> Reset </button>";
-        echo "</div>";
+        echo "</div>";}
     ?>
     
 
 
     </main>
+    <script src="Javascript/pick_the_chapter.js"></script>
+    <script src="Javascript/update_the_progress_bar.js"></script>
 
     
 </body>
