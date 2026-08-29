@@ -68,7 +68,7 @@
                
                 
                 
-                echo "<button class='' id='' onclick='User_pick_the_chapter($x)'>
+                echo "<button class='' id='' onclick='User_pick_the_chapter($x),Update_time() '>
                 ";
 
                 echo "<h2 id='Chaptername_$x'>".$Json_Audiobook_file["Chapters_names"][$x]."</h2>";
@@ -96,28 +96,32 @@
         <source src=".$Json_Audiobook_file['audio_book_link']." type='audio/ogg; codecs=opus'> >
         
         </audio>";
-            echo "<h2 id='Total_time_Left'>Total time Left: 2:22:02</h2>";
             echo "<div class='the_main_audio_items'>";
-                echo "<button> before </button>";
+                echo "<button onclick='previous_chapter(document.getElementById(\"audio_1\"))'> before </button>";
                 echo "<div class='outer_track'><div class='inner_track' id='inner_track'></div></div>";
-                echo "<button> next </button>";
+                echo "<button onclick='next_chapter(document.getElementById(\"audio_1\"))'> next </button>";
             echo "</div>";
             echo "<div class='timing_and_name'>";
             echo "<h2 id='Start_time'>15:04</h2>";
+            echo "<h2 id='Chapter_id' style='visibility: hidden;'>1</h2>";
             echo "<h2 id='Chapter_name'>Chapter Name</h2>";
             echo "<h2 id='Ends_at'>20:00</h2>";
             echo "</div>";
             echo "<div class='User_inputs'>";
-                echo "<button> Stop </button>";
-                echo "<button >Start</button>";
-                echo "<button> Reset </button>";
+                echo "<button onclick='stop(document.getElementById(\"audio_1\"))'> Stop </button>";
+                echo "<button onclick='play(document.getElementById(\"audio_1\"))'>Start</button>";
+                echo "<button onclick='seek(document.getElementById(\"audio_1\"))'> Reset </button>";
         echo "</div>";}
     ?>
     
 
 
     </main>
+    <div id="check_the_time"></div>
+    <div id="check_the_time_2" >false</div>
     <script src="Javascript/pick_the_chapter.js"></script>
+    <script src="Javascript/bisc_buttons.js"></script>
+    <script src="Javascript/Display_the_time.js"></script>
     <script src="Javascript/update_the_progress_bar.js"></script>
 
     

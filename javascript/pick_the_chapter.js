@@ -1,5 +1,4 @@
 function User_pick_the_chapter(number) {
-    import ("./update_the_progress_bar.js");
     console.log(document.getElementById("start_" + number).innerHTML );
     var get_audio = document.getElementById("audio_1");
 
@@ -12,12 +11,12 @@ function User_pick_the_chapter(number) {
     if(get_audio.paused) {
         get_audio.play();
     }
-
-    //get_audio.currentTime = document.getElementById("start_" + number).value;
-    
+    document.getElementById("Chapter_id").innerHTML =  number;
     document.getElementById("Start_time").innerHTML = " " + document.getElementById("start_" + number).innerHTML; ;
     document.getElementById("Chapter_name").innerHTML = " " + document.getElementById("Chaptername_" + number).innerHTML; ;
-    document.getElementById("Ends_at").inertHTML = " " + document.getElementById("End_" + number).innerHTML; 
-    update_the_progress_bar(number);
-
+    document.getElementById("Ends_at").innerHTML = " " + document.getElementById("End_" + number).innerHTML; 
+    
+    document.getElementById("check_the_time_2").innerHTML = "true";
+    Update_time()
+    
 }
