@@ -30,7 +30,48 @@
             echo "</div>";
     }
     else
-        {
+        {echo "<div class='Master_holder'>";
+                echo "<div class='chapters_and_add_more'>";
+            echo "<div class='items'>";
+
+            echo "<h2>History</h2>";
+
+            echo "</div>";
+            echo "<div>";
+            echo "<ol style='list-style:none;, padding-left:0;'>";
+            $x = 0;
+            for($x = 0; $x < count($Json_Audiobook_file["Chapters_names"]); $x++)
+            {//change the button
+                $y = 0;
+                
+                echo "<li class='the_chapter_buttons_and_other' id='the_chapter_buttons_and_other_$x'>";
+               
+                
+                
+                echo "<button class='' id='' onclick='User_pick_the_chapter($x),Update_time() '>
+                ";
+
+                echo "<h2 id='Chaptername_$x'>".$Json_Audiobook_file["Chapters_names"][$x]."</h2>";
+                echo "<div class='Times_items'> ";
+                    echo "<p id='start_$x'>".$Json_Audiobook_file["timestamps"][$x]."</p>";
+                    echo "<p id=''>/</p>";
+                    echo "<p id='End_$x'>  ".$Json_Audiobook_file["Chapters_lengths"][$x]." </p>";
+                echo "</div>";
+                
+                
+                echo"
+
+                
+                
+                
+                </button>";
+                echo "<h2></h2>";
+
+            }
+        echo "</ol>";
+        echo "</div>";
+        echo "</div>";
+
             echo "<div class='image_and_creaters' s>";
                 echo "<img src='".$Json_Audiobook_file['cover']."'>";
                 echo "<div class='the_creaters_and_info'>";
@@ -53,8 +94,10 @@
             echo  "</div>";
             echo "<div class='chapters_and_add_more'>";
             echo "<div>";
-            echo "<a href='add_time_stamps.php?book_id=".$ID_Code ."'>";
-            echo "<h2>Add Timestamps</h2>";
+            echo "<a class='items' href='add_time_stamps.php?book_id=".$ID_Code ."'>";
+            echo "<h2></h2>";
+            echo "<h2>Timestamps</h2>";
+            echo "<h2><butto>+ Add </button></h2>";
             echo "</a>";
             echo "</div>";
             echo "<div>";
@@ -72,7 +115,7 @@
                 ";
 
                 echo "<h2 id='Chaptername_$x'>".$Json_Audiobook_file["Chapters_names"][$x]."</h2>";
-                echo "<div>";
+                echo "<div class='Times_items'>";
                     echo "<p id='start_$x'>".$Json_Audiobook_file["timestamps"][$x]."</p>";
                     echo "<p id=''>/</p>";
                     echo "<p id='End_$x'>  ".$Json_Audiobook_file["Chapters_lengths"][$x]." </p>";
@@ -91,39 +134,44 @@
         echo "</ol>";
         echo "</div>";
         echo "</div>";
+        echo "</div>";
         echo "<div class='audio_play'>";
         echo "<audio controls id='audio_1' preload='metadata'>
         <source src=".$Json_Audiobook_file['audio_book_link']." type='audio/ogg; codecs=opus'> >
         
         </audio>";
-            echo "<div class='the_main_audio_items'>";
+           
+            echo "<div class='timing_and_name'>";
+            echo "<h2 id='Start_time'>15:04</h2>";
+
+            echo "<h2 id='Chapter_name'>Chapter Name</h2>";
+            echo "<h2 id='Ends_at'>20:00</h2>";
+            echo "</div>";
+             echo "<div class='the_main_audio_items'>";
                 echo "<button onclick='previous_chapter(document.getElementById(\"audio_1\"))'> before </button>";
                 echo "<div class='outer_track'><div class='inner_track' id='inner_track'></div></div>";
                 echo "<button onclick='next_chapter(document.getElementById(\"audio_1\"))'> next </button>";
             echo "</div>";
-            echo "<div class='timing_and_name'>";
-            echo "<h2 id='Start_time'>15:04</h2>";
-            echo "<h2 id='Chapter_id' style='visibility: hidden;'>1</h2>";
-            echo "<h2 id='Chapter_name'>Chapter Name</h2>";
-            echo "<h2 id='Ends_at'>20:00</h2>";
-            echo "</div>";
             echo "<div class='User_inputs'>";
                 echo "<button onclick='stop(document.getElementById(\"audio_1\"))'> Stop </button>";
                 echo "<button onclick='play(document.getElementById(\"audio_1\"))'>Start</button>";
+                echo "<button onclick='mute(document.getElementById(\"audio_1\"))'> mute  </button>";
                 echo "<button onclick='seek(document.getElementById(\"audio_1\"))'> Reset </button>";
-        echo "</div>";}
+        echo "</div>";
+                    echo "<h2 id='Chapter_id' style='visibility: hidden;'>1</h2>";
+        }
     ?>
     
 
 
     </main>
-    <div id="check_the_time"></div>
-    <div id="check_the_time_2" >false</div>
+
+
     <script src="Javascript/pick_the_chapter.js"></script>
     <script src="Javascript/bisc_buttons.js"></script>
     <script src="Javascript/Display_the_time.js"></script>
     <script src="Javascript/update_the_progress_bar.js"></script>
-
+    <script src="Javascript/on_refest.js"></script>
     
 </body>
 </html>

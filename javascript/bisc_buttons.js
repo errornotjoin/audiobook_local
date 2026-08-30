@@ -36,3 +36,15 @@ function previous_chapter(audio)
         console.log("No more chapters");
     }
 }
+function mute(audio)
+{
+    if(audio.muted)
+    {
+        audio.muted = false;
+        
+    }
+    else
+    {
+        audio.muted = true;
+    }
+}

@@ -16,7 +16,6 @@ function User_pick_the_chapter(number) {
     document.getElementById("Chapter_name").innerHTML = " " + document.getElementById("Chaptername_" + number).innerHTML; ;
     document.getElementById("Ends_at").innerHTML = " " + document.getElementById("End_" + number).innerHTML; 
     
-    document.getElementById("check_the_time_2").innerHTML = "true";
-    Update_time()
+    //Update_time()
     
 }

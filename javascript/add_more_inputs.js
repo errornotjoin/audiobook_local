@@ -22,8 +22,11 @@ function incress_the_inputs()
         Chapter_names.placeholder = "Chapters Name"
 
         Chapter_names.type = "text"
-        Chapter_StartsAT.type = "time" 
-        chater_lastfor.type = "time"
+        Chapter_StartsAT.type = "text" 
+        chater_lastfor.type = "text"
+
+        Chapter_StartsAT.pattern = "[0-5][0-9]:[0-5][0-9]:[0-5][0-9]" 
+        chater_lastfor.pattern = "[0-5][0-9]:[0-5][0-9]:[0-5][0-9]"
         
         the_div_holder.appendChild(the_user_inputs)
         the_user_inputs.appendChild(Chapter_names)
