@@ -33,6 +33,7 @@ stop_the_time_out()
                 console.log("The next chapter is " + current_chapter );
                 var next_chapter_number = Number(current_chapter) + 1;
                 User_pick_the_chapter(next_chapter_number, true)
+                save_point("Chapter has ended");
 
                 stop_the_time_out()
 

@@ -40,7 +40,7 @@
             echo "<div>";
             echo "<ol style='list-style:none;, padding-left:0;'>";
             $x = 0;
-            for($x = 0; $x < count($Json_Audiobook_file["Chapters_names"]); $x++)
+            for($x = 0; $x < count($Json_Audiobook_file["history_types"]); $x++)
             {//change the button
                 $y = 0;
                 
@@ -51,11 +51,11 @@
                 echo "<button class='' id='' onclick='User_pick_the_chapter($x),stop_the_time_out() '>
                 ";
 
-                echo "<h2 id='Chaptername_$x'>".$Json_Audiobook_file["Chapters_names"][$x]."</h2>";
+                echo "<h2 >".$Json_Audiobook_file["history_types"][$x]."</h2>";
                 echo "<div class='Times_items'> ";
-                    echo "<p id='start_$x'>".$Json_Audiobook_file["timestamps"][$x]."</p>";
-                    echo "<p id=''>/</p>";
-                    echo "<p id='End_$x'>  ".$Json_Audiobook_file["Chapters_lengths"][$x]." </p>";
+                    echo "<p id='start_$x'>".$Json_Audiobook_file["history_timestamps"][$x]."</p>";
+                    echo "<p id='Chaptername_$x'>".$Json_Audiobook_file["history_Chapters_names"][$x]."</p>";
+                    echo "<p id='End_$x'>  ".$Json_Audiobook_file["history_Chapters_lengths"][$x]." </p>";
                 echo "</div>";
                 
                 
@@ -172,6 +172,7 @@
     <script src="Javascript/Display_the_time.js"></script>
     <script src="Javascript/update_the_progress_bar.js"></script>
     <script src="Javascript/on_refest.js"></script>
+    <script src="Javascript/Save_point.js"></script>
     
 </body>
 </html>
