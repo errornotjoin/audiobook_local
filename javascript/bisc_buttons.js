@@ -8,29 +8,32 @@ function play(audio)
 }
 function seek(audio)
 {
-    var start_time = document.getElementById("Start_time").innerHTML;
-    var split_time = start_time.split(":");
-    var seconds = (+split_time[0]) * 60 * 60 + (+split_time[1]) * 60 + (+split_time[2]); 
-    Start_time = seconds;
-    audio.currentTime = Start_time;
+    try {
+        var current_chapter = document.getElementById("Chapter_id");
+        var next_chapter_number = Number(current_chapter.value) ;
+        User_pick_the_chapter(next_chapter_number);
+    } catch (error) {
+        console.log(error);
+    }
+
+
 }
 function next_chapter(audio)
 {
     try {
-        var current_chapter = document.getElementById("Chapter_id").innerHTML;
-        var chapter_number = current_chapter.split("_")[1];
-        var next_chapter_number = Number(chapter_number) + 1;
+        var current_chapter = document.getElementById("Chapter_id");
+        var next_chapter_number = Number(current_chapter.value) + 1;
         User_pick_the_chapter(next_chapter_number);
     } catch (error) {
-        console.log("No more chapters");
+        console.log(error);
     }
 }
 function previous_chapter(audio)
 {
  try {
-        var current_chapter = document.getElementById("Chapter_id").innerHTML;
-        var chapter_number = current_chapter.split("_")[1];
-        var next_chapter_number = Number(chapter_number) - 1;
+        var current_chapter = document.getElementById("Chapter_id");
+        var next_chapter_number = Number(current_chapter.value) - 1;
+
         User_pick_the_chapter(next_chapter_number);
     } catch (error) {
         console.log("No more chapters");

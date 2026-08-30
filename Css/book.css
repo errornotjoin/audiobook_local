@@ -80,12 +80,15 @@
 .audio_play
 {
     width: 95%;
+    position: relative;
+    left: 2%;
 }
 .timing_and_name
 {
     display: grid;
     grid-template-columns: 33% 33% 33%;
     text-align: center;
+    gap: 10px;
 }
 .User_inputs
 {
@@ -146,4 +149,18 @@
     height: 30px;
     background-color: #142f53;
     border-radius: 5px;
+    
+}
+.timing_and_name h2 
+{
+    color: snow;
+    text-align: center;
+    background-color: #093672;
+    border-radius: 5px;
+    position: relative;
+    left: 1%;
+}
+@keyframes speed {
+    0% { width: 0%; }
+    100% { width: 100%; }
 }

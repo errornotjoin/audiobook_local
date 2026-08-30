@@ -48,7 +48,7 @@
                
                 
                 
-                echo "<button class='' id='' onclick='User_pick_the_chapter($x),Update_time() '>
+                echo "<button class='' id='' onclick='User_pick_the_chapter($x),stop_the_time_out() '>
                 ";
 
                 echo "<h2 id='Chaptername_$x'>".$Json_Audiobook_file["Chapters_names"][$x]."</h2>";
@@ -74,7 +74,7 @@
 
             echo "<div class='image_and_creaters' s>";
                 echo "<img src='".$Json_Audiobook_file['cover']."'>";
-                echo "<div class='the_creaters_and_info'>";
+                echo "<div class='the_creaters_and_info'>"; 
                     echo "<div>";
                         echo "<h2>";
                         echo $Json_Audiobook_file['author'];
@@ -111,7 +111,7 @@
                
                 
                 
-                echo "<button class='' id='' onclick='User_pick_the_chapter($x),Update_time() '>
+                echo "<button class='' id='' onclick='User_pick_the_chapter($x),stop_the_time_out() '>
                 ";
 
                 echo "<h2 id='Chaptername_$x'>".$Json_Audiobook_file["Chapters_names"][$x]."</h2>";
@@ -136,7 +136,7 @@
         echo "</div>";
         echo "</div>";
         echo "<div class='audio_play'>";
-        echo "<audio controls id='audio_1' preload='metadata'>
+        echo "<audio controls id='audio_1' style='visibility: hidden ;' preload='metadata'>
         <source src=".$Json_Audiobook_file['audio_book_link']." type='audio/ogg; codecs=opus'> >
         
         </audio>";
@@ -158,7 +158,7 @@
                 echo "<button onclick='mute(document.getElementById(\"audio_1\"))'> mute  </button>";
                 echo "<button onclick='seek(document.getElementById(\"audio_1\"))'> Reset </button>";
         echo "</div>";
-                    echo "<h2 id='Chapter_id' style='visibility: hidden;'>1</h2>";
+                    echo "<input id='Chapter_id' style='visibility: hidden ;' value='0'>";
         }
     ?>
     

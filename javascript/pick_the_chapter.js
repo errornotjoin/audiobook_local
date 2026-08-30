@@ -1,4 +1,4 @@
-function User_pick_the_chapter(number) {
+function User_pick_the_chapter(number, auto_play) {
     console.log(document.getElementById("start_" + number).innerHTML );
     var get_audio = document.getElementById("audio_1");
 
@@ -11,11 +11,9 @@ function User_pick_the_chapter(number) {
     if(get_audio.paused) {
         get_audio.play();
     }
-    document.getElementById("Chapter_id").innerHTML =  number;
+    document.getElementById("Chapter_id").value =  number;
     document.getElementById("Start_time").innerHTML = " " + document.getElementById("start_" + number).innerHTML; ;
     document.getElementById("Chapter_name").innerHTML = " " + document.getElementById("Chaptername_" + number).innerHTML; ;
     document.getElementById("Ends_at").innerHTML = " " + document.getElementById("End_" + number).innerHTML; 
-    
-    //Update_time()
-    
+
 }
