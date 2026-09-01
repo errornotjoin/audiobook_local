@@ -4,10 +4,19 @@
         "title": "lord of the rings ",
         "author": "j.r.r",
         "narrator": "andy serkis",
-        "duration": "23:12",
+        "duration": "23:12:00",
         "cover": "images\/lord_of_the_rings__6a89c5d69577f_cover.jpg",
         "book_link_page": "book.php?ID=6a89c5d69577f",
         "audio_book_link": "audiobook\/lord_of_the_rings__6a89c5d69577f_audiobook.opus"
-        
+    },
+    {
+        "ID": "The Hobbit_6a97083aa393a",
+        "title": "The Hobbit",
+        "author": "j.r.r. tolkien",
+        "narrator": "Andy Serkis",
+        "duration": "10:25:00",
+        "cover": "images\/The_Hobbit_6a97083aa393a_cover.jpg",
+        "book_link_page": "book.php?ID=6a97083aa393a",
+        "audio_book_link": "audiobook\/The_Hobbit_6a97083aa393a_audiobook.mp3"
     }
 ]

@@ -35,7 +35,7 @@
             echo "<div class='items'>";
 
             echo "<h2>History</h2>";
-
+            echo "<button onclick='window.location(".$_GET["book"].")'>Save History</button>";
             echo "</div>";
             echo "<div>";
             echo "<ol style='list-style:none;, padding-left:0;'>";
@@ -161,18 +161,10 @@
                     echo "<input id='Chapter_id' style='visibility: hidden ;' value='0'>";
         }
     ?>
-    
-
-
     </main>
-
-
     <script src="Javascript/pick_the_chapter.js"></script>
     <script src="Javascript/bisc_buttons.js"></script>
     <script src="Javascript/Display_the_time.js"></script>
-    <script src="Javascript/update_the_progress_bar.js"></script>
-    <script src="Javascript/on_refest.js"></script>
     <script src="Javascript/Save_point.js"></script>
-    
 </body>
 </html>

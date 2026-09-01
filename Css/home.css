@@ -50,7 +50,8 @@ main
     position: relative;
     top: 10px;
     height: 100%;
-    width: 100%;
+    width: 90%;
+    border-radius: 10px;
 
 
 }

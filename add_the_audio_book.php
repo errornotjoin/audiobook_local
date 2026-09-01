@@ -35,7 +35,7 @@
                 <input type="text" name="author" placeholder="Enter the author of the audiobook" required>
                 <input type="text" name="narrator" placeholder="Enter the narrator of the audiobook" required>
                 <input type="date" name="release_date" placeholder="Enter the release date of the audiobook" required>
-                <input type="time" name="duration" required>
+                <input type="text" name="duration" pattern='[0-5][0-9]:[0-5][0-9]:[0-5][0-9]' required>
             </div>
             <div>
                 <textarea name="description" placeholder="Enter the description of the audiobook" required></textarea>

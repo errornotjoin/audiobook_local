@@ -16,7 +16,12 @@ function save_point(type)
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({
+            //this is where the audio time (in seconds)
             "current_time": current_time,
+            //name of the chapter,
+            //start time,
+            //length of the chapter
+            //the type of action that was done
             "current_chapter": current_chapter,
             "current_chapter_name": current_chapter_name,
             "current_chapter_start_time": current_chapter_start_time,
