@@ -23,10 +23,7 @@
         </div>
     </header>
     <main>
-    <div class="user_listing_right_now">
-        <?php ##user list still list?>
-        .
-    </div>
+    
     <div class="Master_list">
         
                 <a href='add_the_audio_book.php'>
