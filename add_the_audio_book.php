@@ -30,22 +30,21 @@
     
     <form action="serverside/add.php" method="post"  enctype="multipart/form-data"  >
         <div class="main_items">
-            <input type="text" name="title" placeholder="Enter the title of the audiobook" required>
+            <input class="Title" type="text" name="title" placeholder="Enter the title of the audiobook" required>
             <div class="some_info">
                 <input type="text" name="author" placeholder="Enter the author of the audiobook" required>
                 <input type="text" name="narrator" placeholder="Enter the narrator of the audiobook" required>
                 <input type="date" name="release_date" placeholder="Enter the release date of the audiobook" required>
-                <input type="text" name="duration" pattern='[0-5][0-9]:[0-5][0-9]:[0-5][0-9]' required>
+                <input type="text" name="duration" placeholder="00:00:00" pattern='[0-5][0-9]:[0-5][0-9]:[0-5][0-9]' required>
             </div>
-            <div>
-                <textarea name="description" placeholder="Enter the description of the audiobook" required></textarea>
-            </div>
+            
             <div class="file_upload">
-                <input type="file" name="audiobook_upload" accept=".mp3,.m4a" required  title="Upload the audiobook file">
+                <input type="file" name="audiobook_upload" accept=".mp3,.m4a, .opus" required  title="Upload the audiobook file">
                 <input type="file" name="cover_art" accept=".jpg,.svg,.png" required>
             </div>
         </div>
         <div class="next_step">
+            <button type="reset" value="Reset">Reset</button>
             <button type="submit">Submit</button>
         </div> 
     </form>

@@ -29,11 +29,4 @@ function save_point(type)
             "type": type
         })
     })
-
-   
-
-
-
-
-
 }

@@ -35,7 +35,7 @@
             echo "<div class='items'>";
 
             echo "<h2>History</h2>";
-            echo "<button onclick='window.location(".$_GET["book"].")'>Save History</button>";
+            echo "<button onclick='window.location(save_file.php?bookID=".$_GET["book"].")'>Save History</button>";
             echo "</div>";
             echo "<div>";
             echo "<ol style='list-style:none;, padding-left:0;'>";
@@ -148,9 +148,9 @@
             echo "<h2 id='Ends_at'>20:00</h2>";
             echo "</div>";
              echo "<div class='the_main_audio_items'>";
-                echo "<button onclick='previous_chapter(document.getElementById(\"audio_1\"))'> before </button>";
+                echo "<button onclick='change_chapter(\"takeaway\")'> before </button>";
                 echo "<div class='outer_track'><div class='inner_track' id='inner_track'></div></div>";
-                echo "<button onclick='next_chapter(document.getElementById(\"audio_1\"))'> next </button>";
+                echo "<button onclick='change_chapter(\"add\"))'> next </button>";
             echo "</div>";
             echo "<div class='User_inputs'>";
                 echo "<button onclick='stop(document.getElementById(\"audio_1\"))'> Stop </button>";
