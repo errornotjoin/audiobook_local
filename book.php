@@ -38,7 +38,7 @@
             echo "<button onclick='window.location(save_file.php?bookID=".$_GET["book"].")'>Save History</button>";
             echo "</div>";
             echo "<div>";
-            echo "<ol style='list-style:none;, padding-left:0;'>";
+            echo "<ol id='history_list' style='list-style:none;, padding-left:0;'>";
             $x = 0;
             for($x = 0; $x < count($Json_Audiobook_file["history_types"]); $x++)
             {//change the button
@@ -111,7 +111,7 @@
                
                 
                 
-                echo "<button class='' id='' onclick='User_pick_the_chapter($x),stop_the_time_out() '>
+                echo "<button class='' id='' onclick='pick_the_chapter($x)'>
                 ";
 
                 echo "<h2 id='Chaptername_$x'>".$Json_Audiobook_file["Chapters_names"][$x]."</h2>";
@@ -153,18 +153,20 @@
                 echo "<button onclick='change_chapter(\"add\"))'> next </button>";
             echo "</div>";
             echo "<div class='User_inputs'>";
-                echo "<button onclick='stop(document.getElementById(\"audio_1\"))'> Stop </button>";
-                echo "<button onclick='play(document.getElementById(\"audio_1\"))'>Start</button>";
-                echo "<button onclick='mute(document.getElementById(\"audio_1\"))'> mute  </button>";
-                echo "<button onclick='seek(document.getElementById(\"audio_1\"))'> Reset </button>";
+                echo "<button onclick='stop()'> Stop </button>";
+                echo "<button onclick='play_audio()'>Start</button>";
+                echo "<button onclick='mute()'> mute  </button>";
+                echo "<button onclick='seek()'> Reset </button>";
         echo "</div>";
                     echo "<input id='Chapter_id' style='visibility: hidden ;' value='0'>";
         }
     ?>
     </main>
     <script src="Javascript/pick_the_chapter.js"></script>
+    <script src="Javascript/count_the_secons.js"></script>
     <script src="Javascript/bisc_buttons.js"></script>
-    <script src="Javascript/Display_the_time.js"></script>
     <script src="Javascript/Save_point.js"></script>
+    <script src="Javascript/update_ui.js"></script>
+    <script src="Javascript/on_load.js"></script>
 </body>
 </html>

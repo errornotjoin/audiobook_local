@@ -1,3 +1,12 @@
 [
-
+    {
+        "ID": "test_6a9afc5307ef5",
+        "title": "test",
+        "author": "test",
+        "narrator": "etst",
+        "duration": "23:32:14",
+        "cover": "images\/test_6a9afc5307ef5_cover.jpg",
+        "book_link_page": "book.php?ID=6a9afc5307ef5",
+        "audio_book_link": "audiobook\/test_6a9afc5307ef5_audiobook.mp3"
+    }
 ]
