@@ -101,7 +101,7 @@
             echo "</a>";
             echo "</div>";
             echo "<div>";
-            echo "<ol style='list-style:none;, padding-left:0;'>";
+            echo "<ol id='chapter_list' style='list-style:none;, padding-left:0;'>";
             $x = 0;
             for($x = 0; $x < count($Json_Audiobook_file["Chapters_names"]); $x++)
             {//change the button
@@ -111,7 +111,7 @@
                
                 
                 
-                echo "<button class='' id='' onclick='pick_the_chapter($x)'>
+                echo "<button class='' id='' onclick='pick_the_chapter($x),cap_the_timeout()'>
                 ";
 
                 echo "<h2 id='Chaptername_$x'>".$Json_Audiobook_file["Chapters_names"][$x]."</h2>";
@@ -148,15 +148,15 @@
             echo "<h2 id='Ends_at'>20:00</h2>";
             echo "</div>";
              echo "<div class='the_main_audio_items'>";
-                echo "<button onclick='change_chapter(\"takeaway\")'> before </button>";
+                echo "<button onclick='next_and_before_chapter(\"before\")'> before </button>";
                 echo "<div class='outer_track'><div class='inner_track' id='inner_track'></div></div>";
-                echo "<button onclick='change_chapter(\"add\"))'> next </button>";
+                echo "<button onclick='next_and_before_chapter(\"next\")'> next </button>";
             echo "</div>";
             echo "<div class='User_inputs'>";
-                echo "<button onclick='stop()'> Stop </button>";
+                echo "<button onclick='stop_audio()'> Stop </button>";
                 echo "<button onclick='play_audio()'>Start</button>";
-                echo "<button onclick='mute()'> mute  </button>";
-                echo "<button onclick='seek()'> Reset </button>";
+                echo "<button onclick='mute_audio()'> mute  </button>";
+                echo "<button onclick='reset_audio()'> Reset </button>";
         echo "</div>";
                     echo "<input id='Chapter_id' style='visibility: hidden ;' value='0'>";
         }
@@ -165,7 +165,7 @@
     <script src="Javascript/pick_the_chapter.js"></script>
     <script src="Javascript/count_the_secons.js"></script>
     <script src="Javascript/bisc_buttons.js"></script>
-    <script src="Javascript/Save_point.js"></script>
+    <script src="Javascript/Display_the_time.js"></script>
     <script src="Javascript/update_ui.js"></script>
     <script src="Javascript/on_load.js"></script>
 </body>
