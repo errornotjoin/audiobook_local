@@ -10,12 +10,15 @@ function save_point(type)
     var current_chapter_name = document.getElementById("Chapter_name").innerHTML;
     var current_chapter_start_time = document.getElementById("Start_time").innerHTML;
     var current_chapter_length = document.getElementById("Ends_at").innerHTML;
+    var book_id = document.getElementById("book_Id").value;
     //this send data to php and php create a temp file 
     // to save ths information
-    fetch("serverside/save_point.php", {
+    fetch("serverside/save_point.php?ID=" + book_id, {
         method: "POST",
         headers: { "content-type": "application/json" },
+        
         body: JSON.stringify({
+            "action" :{
             //this is where the audio time (in seconds)
             "current_time": current_time,
             //name of the chapter,
@@ -26,7 +29,7 @@ function save_point(type)
             "current_chapter_name": current_chapter_name,
             "current_chapter_start_time": current_chapter_start_time,
             "current_chapter_length": current_chapter_length,
-            "type": type
+            "type": type},
         })
     })
 }

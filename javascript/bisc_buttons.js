@@ -3,6 +3,7 @@ var progressBar = document.getElementById('inner_track');
 function play_audio() {
     audio.play();
     progressBar.style.animationPlayState = "running";
+    save_point("Play");
 }
 function mute_audio() {
     if (audio.muted) {
@@ -10,9 +11,11 @@ function mute_audio() {
     } else {
         audio.muted = true;
     }
+
 }
 function stop_audio() {
     audio.pause();
+    save_point("Stop");
     progressBar.style.animationPlayState = "paused";
 }
 function next_and_before_chapter(direction) {
@@ -27,11 +30,13 @@ function next_and_before_chapter(direction) {
         // Logic to go to the next chapter
             maths = parseInt(chapter_id.value, 10) + 1;
             chapter_id.value = maths;
+            save_point("Next Chapter");
             pick_the_chapter(maths,type)
 
     } else if (direction === 'before' & maths > 0) {
             maths = parseInt(chapter_id.value, 10) - 1;
             chapter_id.value = maths;
+            save_point("Previous Chapter");
             pick_the_chapter(maths,type)
     }
 
@@ -43,4 +48,5 @@ function reset_audio()
     var chapter_id = document.getElementById('Chapter_id').value;
         var type = "user_change";
     pick_the_chapter(chapter_id,type)
+    save_point("Reset Audio");
 }

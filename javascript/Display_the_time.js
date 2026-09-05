@@ -19,18 +19,17 @@ function display_the_time()
         
     
     var oldlenght = document.getElementById('Ends_at');
-    var lenght = oldlenght.textContent;
-    var times =  convert_to_seconds(lenght) 
+    var times =  convert_to_seconds(oldlenght.textContent) 
 
     if(times > 0) {
-        
         times -= 1;
-        lenght = convert_back_to_time(times) 
-        oldlenght.textContent = lenght;
+        oldlenght.textContent = convert_back_to_time(times) 
         cap_the_timeout()
     }
     else
     {
+        var progressBar = document.getElementById('inner_track');
+        progressBar.style.animationPlayState = "paused";
         clearTimeout(timeout);;
         pick_the_chapter(chater ,"user_made")
 

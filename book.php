@@ -159,14 +159,24 @@
                 echo "<button onclick='reset_audio()'> Reset </button>";
         echo "</div>";
                     echo "<input id='Chapter_id' style='visibility: hidden ;' value='0'>";
+                    echo "<input id='book_Id' style='visibility: hidden ;' value='".$ID_Code ."'>";
         }
     ?>
     </main>
+    <!-- Change the Chapter -->
     <script src="Javascript/pick_the_chapter.js"></script>
+    <!-- Convert items into seconds or reformat time   -->
     <script src="Javascript/count_the_secons.js"></script>
+    <!-- Handle the bisc buttons -->
     <script src="Javascript/bisc_buttons.js"></script>
+    <!-- its an count down timer for the audio -->
     <script src="Javascript/Display_the_time.js"></script>
+    <!-- Update All UI Elements -->
     <script src="Javascript/update_ui.js"></script>
+    <!-- When page loads -->
     <script src="Javascript/on_load.js"></script>
+    <!-- save point-->
+    <script src="Javascript/save_point.js"></script>
+
 </body>
 </html>
