@@ -14,10 +14,12 @@ function save_point(type)
     //this send data to php and php create a temp file 
     // to save ths information
     fetch("serverside/save_point.php?ID=" + book_id, {
+        
         method: "POST",
         headers: { "content-type": "application/json" },
         
         body: JSON.stringify({
+            "text_file": book_id + ".txt",
             "action" :{
             //this is where the audio time (in seconds)
             "current_time": current_time,
@@ -31,5 +33,6 @@ function save_point(type)
             "current_chapter_length": current_chapter_length,
             "type": type},
         })
+        
     })
 }
