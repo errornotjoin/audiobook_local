@@ -4,14 +4,14 @@ $upload_directory_audiobook = "../audiobook/";
 $upload_directory_cover = "../images/";
 $Json_master_list = "../JSON/Master_Redcon.json";
 $json_audiobook_localtion = "../JSON/the_audiobook_info/";
-
+$Json_temp_history_location = "tmp_files/";
 //this infor comes from "add_the_audio_book.php"
-$title = htmlspecialchars( $_POST['title'], ENT_QUOTES, 'UTF-9');
+$title = htmlspecialchars( $_POST['title'], ENT_QUOTES, 'UTF-8');
 $author = htmlspecialchars($_POST['author']);
 $narrator = htmlspecialchars($_POST['narrator']);
 $duration = htmlspecialchars($_POST['duration']);
 $release_date = htmlspecialchars($_POST['release_date']);
-$description = htmlspecialchars($_POST['description']);
+
 //
 $audio_book_file = $_FILES['audiobook_upload'];
 $cover_art_file = $_FILES['cover_art'];
@@ -52,8 +52,22 @@ $format_for_json = array(
     "book_link_page" => "book.php?ID=$create_unique_id",
     "audio_book_link" => $audiobook_info
 );
+$format_for_Temp_json = array(
+    
+    "book_id" => [] ,
+    "current_chapter" =>[] ,
+    "current_chapter_length" => [],
+    "current_chapter_name" => [],
+    "current_chapter_start_time" => [],
+    "current_time" => [],
+    "type" => [],
+
+);
 //
 $update_title = str_replace(' ', '_', $title);
+
+
+
 function Update_names($audiobook_info,$cover_art_info,  $unique_id, $update_title)
 {
         try{
@@ -81,7 +95,8 @@ function upload_to_file($audiobook_info, $cover_art_info, $upload_directory_audi
     // Upload the audiobook and cover art files to the server
     move_uploaded_file($audiobook_info['tmp_name'], $upload_directory_audiobook . $audiobook_info['name']);
     move_uploaded_file($cover_art_info['tmp_name'], $upload_directory_cover . $cover_art_info['name']);
-}catch(Exception $e)
+    echo "completed uploading files";
+    }catch(Exception $e)
     {
         header("Location: ../main.php?Error=02");
     }
@@ -104,6 +119,7 @@ function add_data_to_master_list($format_for_json, $Json_master_list)
     $save_the_updated = json_encode($data_in_list, JSON_PRETTY_PRINT);
     //sending it to the  master list and saving the update
     file_put_contents($Json_master_list, $save_the_updated);
+    echo "completed updating master list";
 }catch(Exception $e)
     {
         header("Location: ../main.php?Error=03");
@@ -127,17 +143,35 @@ function create_new_json_file($format_for_json, $json_audiobook_localtion, $titl
 
     $json_encode_for_new_file = json_encode($format_for_json, JSON_PRETTY_PRINT);
     
+    
     file_put_contents($json_audiobook_localtion.$title."_".$create_unique_id.".json", $json_encode_for_new_file, LOCK_EX);
+    echo "completed new JSON file";
     } catch(Exception $e)
     {
         header("Location: ../main.php?Error=04");
     }
 }
 
+function create_temp_history($format_for_Temp_json, $Json_temp_history_location, $title, $create_unique_id)
+{
+
+    try {
+        $json_data = json_encode($format_for_Temp_json , JSON_PRETTY_PRINT);
+        file_put_contents($Json_temp_history_location.$title."_".$create_unique_id.".json", $json_data);
+        echo "completed Temp History";
+    } catch (Exception $e) {
+        header("Location: ../main.php?Error=04");
+    }
+
+
+
+}
+
 //this is the correct order 
 upload_to_file($audiobook_info, $cover_art_info, $upload_directory_audiobook, $upload_directory_cover);
 add_data_to_master_list($format_for_json, $Json_master_list);
 create_new_json_file($format_for_json, $json_audiobook_localtion, $title, $create_unique_id);
+create_temp_history($format_for_Temp_json, $Json_temp_history_location, $title, $create_unique_id);
 header("Location: ../main.php?message=Complet")
 ?>
 

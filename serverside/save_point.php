@@ -1,10 +1,7 @@
 <?php
-$id = $_GET['ID'];
-$getting_data = file_get_contents("php://input");
+$js_fetch_data = json_decode(file_get_contents("php://input"), true);
 
-file_put_contents("tmp_files/temp_file_for_$id.json", $getting_data . "\n", FILE_APPEND);
-echo $getting_data;
-
-
-
+$send_code_back = $js_fetch_data;
+echo json_encode($send_code_back);
+return  json_encode("test");
 ?>
