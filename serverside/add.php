@@ -1,16 +1,18 @@
 <?php
 // change me to the correct path to the upload directory
+
 $upload_directory_audiobook = "../audiobook/";
 $upload_directory_cover = "../images/";
 $Json_master_list = "../JSON/Master_Redcon.json";
 $json_audiobook_localtion = "../JSON/the_audiobook_info/";
 $Json_temp_history_location = "tmp_files/";
+
 //this infor comes from "add_the_audio_book.php"
 $title = htmlspecialchars( $_POST['title'], ENT_QUOTES, 'UTF-8');
-$author = htmlspecialchars($_POST['author']);
-$narrator = htmlspecialchars($_POST['narrator']);
-$duration = htmlspecialchars($_POST['duration']);
-$release_date = htmlspecialchars($_POST['release_date']);
+$author = htmlspecialchars($_POST['author'], ENT_QUOTES, 'UTF-8');
+$narrator = htmlspecialchars($_POST['narrator'], ENT_QUOTES, 'UTF-8');
+$duration = htmlspecialchars($_POST['duration'], ENT_QUOTES, 'UTF-8');
+$release_date = htmlspecialchars($_POST['release_date'], ENT_QUOTES, 'UTF-8');
 
 //
 $audio_book_file = $_FILES['audiobook_upload'];
@@ -18,7 +20,7 @@ $cover_art_file = $_FILES['cover_art'];
 //
 $create_unique_id = uniqid();
 
-//IMPORTING array 
+//Fills array that are VERY IMPORTANT for further processing
 //audiobook file infor
 
 $audiobook_info = 
@@ -41,6 +43,8 @@ $cover_art_info =
 
 // i moved this to the here beacuse i need to accese and change it (add or remove )
 // look at create_new_json_file() for any changes 
+
+//JSON FORMATTING 
 $format_for_json = array(
     
     "ID" => $title. "_". $create_unique_id ,
@@ -52,6 +56,7 @@ $format_for_json = array(
     "book_link_page" => "book.php?ID=$create_unique_id",
     "audio_book_link" => $audiobook_info
 );
+
 $format_for_Temp_json = array(
     
     "book_id" => [] ,

@@ -1,3 +1,12 @@
 [
-
+    {
+        "ID": "cat_6aa85fea46afb",
+        "title": "cat",
+        "author": "cvat",
+        "narrator": "qwe",
+        "duration": "13:23:12",
+        "cover": "images\/cat_6aa85fea46afb_cover.jpg",
+        "book_link_page": "book.php?ID=6aa85fea46afb",
+        "audio_book_link": "audiobook\/cat_6aa85fea46afb_audiobook.mp3"
+    }
 ]

@@ -20,7 +20,7 @@ function save_point(type)
         headers: { "content-type": "application/json" },
         
         body: JSON.stringify({
-            "action" :{
+            
             //this is where the audio time (in seconds)
             "current_time": current_time,
             //name of the chapter,
@@ -34,7 +34,7 @@ function save_point(type)
             "type": type,
             "book_id": book_id
         
-        }
+        
         })
         
     })
