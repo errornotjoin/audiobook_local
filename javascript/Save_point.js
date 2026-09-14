@@ -15,11 +15,12 @@ function save_point(type)
     // to save ths information
     
     fetch("serverside/save_point.php" , {
+        
         method: "POST",
         headers: { "content-type": "application/json" },
         
         body: JSON.stringify({
-           
+            "action" :{
             //this is where the audio time (in seconds)
             "current_time": current_time,
             //name of the chapter,
@@ -35,6 +36,7 @@ function save_point(type)
         
         ,
         })
+        
     })
         .then(response => response.json())
         .then(data => console.log(data))
