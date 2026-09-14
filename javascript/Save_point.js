@@ -34,7 +34,7 @@ function save_point(type)
             "type": type,
             "book_id": book_id
         
-        ,
+        }
         })
         
     })
