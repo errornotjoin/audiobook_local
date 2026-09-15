@@ -10,6 +10,7 @@ function save_point(type)
     var current_chapter_name = document.getElementById("Chapter_name").innerHTML;
     var current_chapter_start_time = document.getElementById("Start_time").innerHTML;
     var current_chapter_length = document.getElementById("Ends_at").innerHTML;
+    var Chapter_ID = document.getElementById("Chapter_id").value;
     var book_id = document.getElementById("book_Id").value;
     //this send data to php and php create a temp file 
     // to save ths information
@@ -32,6 +33,7 @@ function save_point(type)
             "current_chapter_start_time": current_chapter_start_time,
             "current_chapter_length": current_chapter_length,
             "type": type,
+            "Chapter_ID": current_chapter,
             "book_id": book_id
         
         

@@ -139,11 +139,13 @@ function create_new_json_file($format_for_json, $json_audiobook_localtion, $titl
         "timestamps" => [],
         "Chapters_lengths"=> [],
         "Chapters_names" => [], 
-        "History_time" => [],
-        "history_types" => [],
-        "history_timestamps" => [],
-        "history_Chapters_lengths"=> [],
-        "history_Chapters_names" => []
+        "current_chapter" => [],
+        "current_chapter_length" => [],
+        "current_chapter_name" => [],
+        "current_chapter_start_time"=> [],
+        "current_time" => [],
+        "type" => [],
+        "Chapter_ID" => []
     ]);
 
     $json_encode_for_new_file = json_encode($format_for_json, JSON_PRETTY_PRINT);

@@ -8,7 +8,7 @@ function pick_the_chapter(chapter_id,type) {
     var chapter_name  = " "
     var chapter_length= " "
     var chapter_start = " "
-    if(type === "history") {
+    if(type === "history" && type !== undefined) {
         
         chapter_name   = document.getElementById("Chaptername_" + chapter_id);
         chapter_length = document.getElementById("End_" + chapter_id);

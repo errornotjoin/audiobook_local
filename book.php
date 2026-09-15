@@ -35,27 +35,27 @@
             echo "<div class='items'>";
 
             echo "<h2>History</h2>";
-            echo "<button onclick='window.location(save_file.php?bookID=".$_GET["book"].")'>Save History</button>";
+            echo "<button onclick='window.location.href=\"serverside/Update_the_history.php?bookID=".$_GET["book"]."\"'>Save History</button>";
             echo "</div>";
             echo "<div>";
             echo "<ol id='history_list' style='list-style:none;, padding-left:0;'>";
             $x = 0;
-            for($x = 0; $x < count($Json_Audiobook_file["history_types"]); $x++)
+            for($x = 0; $x < count($Json_Audiobook_file["type"]); $x++)
             {//change the button
                 $y = 0;
                 
                 echo "<li class='the_chapter_buttons_and_other' id='the_chapter_buttons_and_other_$x'>";
                
                 
-                
-                echo "<button class='' id='' onclick='User_pick_the_chapter($x),stop_the_time_out() '>
+                $test = $Json_Audiobook_file["Chapter_ID"][$x];
+                echo "<button class='' id='' onclick='pick_the_chapter($test, \"history\");cap_the_timeout() '>
                 ";
 
-                echo "<h2 >".$Json_Audiobook_file["history_types"][$x]."</h2>";
+                echo "<h2 >".$Json_Audiobook_file["type"][$x]."</h2>";
                 echo "<div class='Times_items'> ";
-                    echo "<p id='start_$x'>".$Json_Audiobook_file["history_timestamps"][$x]."</p>";
-                    echo "<p id='Chaptername_$x'>".$Json_Audiobook_file["history_Chapters_names"][$x]."</p>";
-                    echo "<p id='End_$x'>  ".$Json_Audiobook_file["history_Chapters_lengths"][$x]." </p>";
+                    echo "<p id='start_$x'>".$Json_Audiobook_file["current_chapter_start_time"][$x]."</p>";
+                    echo "<p id='Chaptername_$x'>".$Json_Audiobook_file["current_chapter_name"][$x]."</p>";
+                    echo "<p id='End_$x'>  ".$Json_Audiobook_file["current_chapter_length"][$x]." </p>";
                 echo "</div>";
                 
                 
@@ -72,7 +72,7 @@
         echo "</div>";
         echo "</div>";
 
-            echo "<div class='image_and_creaters' s>";
+            echo "<div class='image_and_creaters'>";
                 echo "<img src='".$Json_Audiobook_file['cover']."'>";
                 echo "<div class='the_creaters_and_info'>"; 
                     echo "<div>";
