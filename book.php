@@ -164,21 +164,21 @@
     ?>
     </main>
     <!-- Change the Chapter -->
-    <script src="Javascript/pick_the_chapter.js"></script>
+    <script src="javascript/pick_the_chapter.js"></script>
     <!-- Convert items into seconds or reformat time   -->
-    <script src="Javascript/count_the_secons.js"></script>
+    <script src="javascript/count_the_secons.js"></script>
     <!-- Handle the bisc buttons -->
-    <script src="Javascript/bisc_buttons.js"></script>
+    <script src="javascript/bisc_buttons.js"></script>
     <!-- its an count down timer for the audio -->
-    <script src="Javascript/Display_the_time.js"></script>
+    <script src="javascript/Display_the_time.js"></script>
     <!-- Update All UI Elements -->
-    <script src="Javascript/update_ui.js"></script>
+    <script src="javascript/update_ui.js"></script>
     <!-- When page loads -->
-    <script src="Javascript/on_load.js"></script>
+    <script src="javascript/on_load.js"></script>
     <!-- save point-->
-    <script src="Javascript/save_point.js"></script>
+    <script src="javascript/save_point.js"></script>
     <!-- saves before page refresh or unload -->
-    <script src="Javascript/on_refreash.js"></script>
+    <script src="javascript/on_refreash.js"></script>
 
 </body>
 </html>

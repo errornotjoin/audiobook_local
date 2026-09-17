@@ -22,7 +22,7 @@ function pick_the_chapter(chapter_id,type) {
         //as history can be larger then chapters and cause index out of bounds errors
         var owner = document.getElementById("chapter_list");
         for(var i = 0; i < owner.children.length; i++) {
-            if(document.getElementById("Chaptername_" + i).textContent=== chapter_name.textContent) {
+            if(document.getElementById("Chaptername_" + i).textContent === chapter_name.textContent) {
                 chapter_id = i;
                 break;
             }
