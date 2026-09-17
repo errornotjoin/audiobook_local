@@ -177,6 +177,8 @@
     <script src="Javascript/on_load.js"></script>
     <!-- save point-->
     <script src="Javascript/save_point.js"></script>
+    <!-- saves before page refresh or unload -->
+    <script src="Javascript/on_refreash.js"></script>
 
 </body>
 </html>
