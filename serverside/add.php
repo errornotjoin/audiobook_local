@@ -7,7 +7,7 @@ $Json_master_list = "../JSON/Master_Redcon.json";
 $json_audiobook_localtion = "../JSON/the_audiobook_info/";
 $Json_temp_history_location = "tmp_files/";
 
-//this infor comes from "add_the_audio_book.php"
+//this stuff comes from "add_the_audio_book.php"
 $title = htmlspecialchars( $_POST['title'], ENT_QUOTES, 'UTF-8');
 $author = htmlspecialchars($_POST['author'], ENT_QUOTES, 'UTF-8');
 $narrator = htmlspecialchars($_POST['narrator'], ENT_QUOTES, 'UTF-8');
@@ -20,7 +20,7 @@ $cover_art_file = $_FILES['cover_art'];
 //
 $create_unique_id = uniqid();
 
-//Fills array that are VERY IMPORTANT for further processing
+
 //audiobook file infor
 
 $audiobook_info = 

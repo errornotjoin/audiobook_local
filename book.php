@@ -47,15 +47,15 @@
                 echo "<li class='the_chapter_buttons_and_other' id='the_chapter_buttons_and_other_$x'>";
                
                 
-                $test = $Json_Audiobook_file["Chapter_ID"][$x];
-                echo "<button class='' id='' onclick='pick_the_chapter($test, \"history\");cap_the_timeout() '>
+              
+                echo "<button class='' id='' onclick='pick_the_chapter($x, \"history\");cap_the_timeout() '>
                 ";
 
                 echo "<h2 >".$Json_Audiobook_file["type"][$x]."</h2>";
                 echo "<div class='Times_items'> ";
-                    echo "<p id='start_$x'>".$Json_Audiobook_file["current_chapter_start_time"][$x]."</p>";
-                    echo "<p id='Chaptername_$x'>".$Json_Audiobook_file["current_chapter_name"][$x]."</p>";
-                    echo "<p id='End_$x'>  ".$Json_Audiobook_file["current_chapter_length"][$x]." </p>";
+                    echo "<p id='history_start_$x'>".$Json_Audiobook_file["current_chapter_start_time"][$x]."</p>";
+                    echo "<p id='history_Chaptername_$x'>".$Json_Audiobook_file["current_chapter_name"][$x]."</p>";
+                    echo "<p id='history_End_$x'>  ".$Json_Audiobook_file["current_chapter_length"][$x]." </p>";
                 echo "</div>";
                 
                 
@@ -111,7 +111,7 @@
                
                 
                 
-                echo "<button class='' id='' onclick='pick_the_chapter($x),cap_the_timeout()'>
+                echo "<button class='' id='' onclick='pick_the_chapter($x, 0),cap_the_timeout()'>
                 ";
 
                 echo "<h2 id='Chaptername_$x'>".$Json_Audiobook_file["Chapters_names"][$x]."</h2>";
