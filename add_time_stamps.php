@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Css/background.css">
     <link rel="stylesheet" href="Css/add_time_stamps.css">
+    <link rel="stylesheet" href="Css/add_time_stamps_small.css">
     <title>Document</title>
 </head>
 <body>
@@ -46,13 +50,11 @@
             ?>
         </div>
         <div class="add_more_things">
-            <label>Create new table :</label>
-            <input type="number" id="Incress_the_inputs_to_this">
-            <button type="button" id="Add_more_inputs_button" onclick="incress_the_inputs()"></button>
-            <div>
-                <input type="reset">
-                <input type="submit">
-            </div>
+            <input type="number" id="Incress_the_inputs_to_this" placeholder="Enter How Many inputs you want">
+            <button type="button" id="Add_more_inputs_button" onclick="incress_the_inputs()"> Add More Inputs</button>
+            <input type="reset">
+            <input type="submit">
+
 
         </div>
     </main>

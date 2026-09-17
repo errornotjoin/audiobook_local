@@ -8,17 +8,9 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="main.php" method="post">
-        <div>
-
-
-        <input type="text" name="user" placeholder="Enter your username">
-        <input type="password" name="password" placeholder="Enter your password">
-        </div>
-        <div>
-        <button type="submit">Submit</button>
-        </div> 
-    </form>
+     <?php
+     header("Location: main.php");
+     ?>
     
 </body>
 </html>

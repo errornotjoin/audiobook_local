@@ -1,0 +1,17 @@
+@media (max-width: 642px)
+{
+    .image_and_creaters
+    {
+        display: none;
+    }
+    .Master_holder
+    {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+    .items
+    {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

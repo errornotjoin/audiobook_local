@@ -1,7 +1,29 @@
+a
+{
+    color: snow;
+}
 body
 {
     background-image: linear-gradient(to top, #050d14, #000000);
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: snow;
+}
+header
+{
+    background-color: #0a1a2e;
+    color: snow;
+
+
+    height: 20px;
+    margin-bottom: 20px;
+    width: 99%;
+}
+header .header_right 
+{
+position: relative;
+left: 2%;
+    display: grid;
+    grid-template-columns: 31% 35% 34% ;
+    gap: 14%;
 }

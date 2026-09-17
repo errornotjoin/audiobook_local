@@ -1,4 +1,5 @@
 <?php
+
 //getting the two JSON files: the temporary one and the main one for updating the history
 $Book_id = $_GET['bookID'];
 $getting_json_file = "tmp_files/$Book_id.json";

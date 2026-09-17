@@ -1,0 +1,26 @@
+@media (max-width: 642px)
+{
+    main
+    {
+        width: 97%;
+        position: relative;
+        left: 2%;
+    }
+    .add_more_things
+    {
+        display: grid;
+        grid-template-columns: 45%45%;
+        gap: 5%;
+        width: 95%;
+        position: relative;
+        left: 5%;
+        bottom: 20px;
+    }
+     .add_more_things input, .add_more_things button
+     {
+        height: 30px;
+        width:99%;
+        background-color: #020013;
+        color: snow;
+     }
+}

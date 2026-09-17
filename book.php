@@ -1,3 +1,7 @@
+<?php
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,17 +9,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Css/background.css">
     <link rel="stylesheet" href="Css/book.css">
+    <link rel="stylesheet" href="Css/small_book.css">
     <title>Document</title>
 </head>
 <body>
      <header>
-        <div class="header_left">
-            <h1>errornotjoin</h1>
-        </div>
+
         <div class="header_right">
+            <a href="main.php">Go Home</a>
+            <a href="add_the_audio_book.php">Add New Audiobook</a>
             <a href="index.php">Logout</a>
         </div>
-    </head1er>
+    </header>
         <main>
     <?php
     $file_localion = "Json/the_audiobook_info/";

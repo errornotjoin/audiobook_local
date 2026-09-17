@@ -1,4 +1,7 @@
 <?php
+
+
+
 //fetching the JSON data sent via POST request by javascript 
 //(javascript/Save_point.js)
 $js_fetch_data = json_decode(file_get_contents("php://input"), true);
