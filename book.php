@@ -179,6 +179,8 @@ $user_on_ios = preg_match('/iphone|ipad|ipod/i', $user_agent);
         }
     ?>
     </main>
+    <!--set audio place to the correct time -->
+    <script src="javascript/change_audio.js"></script>
     <!-- Change the Chapter -->
     <script src="javascript/pick_the_chapter.js"></script>
     <!-- Convert items into seconds or reformat time   -->
@@ -195,6 +197,7 @@ $user_on_ios = preg_match('/iphone|ipad|ipod/i', $user_agent);
     <script src="javascript/save_point.js"></script>
     <!-- saves before page refresh or unload -->
     <script src="javascript/on_refreash.js"></script>
+
 
 </body>
 </html>
