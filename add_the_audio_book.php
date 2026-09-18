@@ -13,11 +13,8 @@
 </head>
 <body>
         <header>
-        <div class="header_left">
-            <h1>errornotjoin</h1>
-        </div>
         <div class="header_right">
-        <a href="main.php">Go Back</a>    
+        <a href="main.php">Go Home</a>    
         <a href="index.php">Logout</a>
             
         </div>

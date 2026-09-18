@@ -1,4 +1,8 @@
 <?php
+$user_agent = $_SERVER['HTTP_USER_AGENT'];
+
+$user_on_ios = preg_match('/iphone|ipad|ipod/i', $user_agent);
+
 
 
 ?>
@@ -141,11 +145,18 @@
         echo "</div>";
         echo "</div>";
         echo "<div class='audio_play'>";
-        echo "<audio controls id='audio_1' style='visibility: hidden ;' preload='metadata'>
+        if(!$user_on_ios)
+        {
+            $preload_action = "metadata";
+        }
+        else
+        {
+            $preload_action = "none";
+        }
+        echo "<audio controls id='audio_1' style='visibility: hidden ;' preload='".$preload_action."'>
         <source src=".$Json_Audiobook_file['audio_book_link']." type='audio/ogg; codecs=opus'> >
         
         </audio>";
-           
             echo "<div class='timing_and_name'>";
             echo "<h2 id='Start_time'>15:04</h2>";
 

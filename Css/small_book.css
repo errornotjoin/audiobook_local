@@ -1,4 +1,4 @@
-@media (max-width: 642px)
+@media (max-width: 992px)
 {
     .image_and_creaters
     {
@@ -13,5 +13,15 @@
     {
         width: 100%;
         box-sizing: border-box;
+    }
+}
+@media (max-width: 642px)
+{
+    .Master_holder
+    {
+        display: grid;
+        grid-template-columns: 95% ;
+        grid-template-rows: 50% 50%;
+
     }
 }
