@@ -65,7 +65,8 @@ $user_on_ios = preg_match('/iphone|ipad|ipod/i', $user_agent);
                     echo "<p id='history_start_$x'>".$Json_Audiobook_file["current_chapter_start_time"][$x]."</p>";
                     echo "<p id='history_Chaptername_$x'>".$Json_Audiobook_file["current_chapter_name"][$x]."</p>";
                     echo "<p id='history_End_$x'>  ".$Json_Audiobook_file["current_chapter_length"][$x]." </p>";
-                echo "</div>";
+                    echo "<input type='hidden' id='history_pre_seconds' value='".$Json_Audiobook_file["current_time"][$x]."'>";
+                    echo "</div>";
                 
                 
                 echo"
@@ -154,7 +155,7 @@ $user_on_ios = preg_match('/iphone|ipad|ipod/i', $user_agent);
             $preload_action = "none";
         }
         echo "<audio controls id='audio_1' style='visibility: hidden ;' preload='".$preload_action."'>
-        <source src=".$Json_Audiobook_file['audio_book_link']." type='audio/ogg; codecs=opus'> >
+        <source src=".$Json_Audiobook_file['audio_book_link']."  type='audio/mp4' '> >
         
         </audio>";
             echo "<div class='timing_and_name'>";
