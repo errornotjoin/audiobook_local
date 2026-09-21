@@ -1,11 +1,14 @@
-function change_audio(start_time, type,pre_seconds ) {
+function change_audio(start_time, type, pre_seconds ) {
     var audio = document.getElementById('audio_1');
+    var progressBar = document.getElementById('inner_track');
     var seek = () => {
         if(type === 'history') {
             audio.currentTime = pre_seconds;
+            progressBar.style.animationPlayState = "running";
         }
         else {
             audio.currentTime = convert_to_seconds(start_time);
+            progressBar.style.animationPlayState = "running";
         }
     }
     //ios need a small delay before seeking to the correct time

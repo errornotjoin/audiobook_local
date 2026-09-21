@@ -8,13 +8,14 @@ function save_point(type)
     //this where the user stopped the audio
     //and the chapter information
     var current_chapter_name = document.getElementById("Chapter_name").innerHTML;
+   
     var current_chapter_start_time = document.getElementById("Start_time").innerHTML;
     var current_chapter_length = document.getElementById("Ends_at").innerHTML;
 
     var book_id = document.getElementById("book_Id").value;
     //this send data to php and php create a temp file 
     // to save ths information
-    
+    if (current_chapter_name != "Chapter Name"){
     fetch("serverside/save_point.php" , {
         
         method: "POST",
@@ -43,5 +44,5 @@ function save_point(type)
         .then(response => response.json())
         .then(data => console.log(data))
         .catch(error => console.error(error))
-    
+    }
 }

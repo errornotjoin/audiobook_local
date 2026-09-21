@@ -159,7 +159,7 @@ $user_on_ios = preg_match('/iphone|ipad|ipod/i', $user_agent);
         
         </audio>";
             echo "<div class='timing_and_name'>";
-            echo "<h2 id='Start_time'>15:04</h2>";
+            echo "<h2 id='Start_time'>00:00</h2>";
 
             echo "<h2 id='Chapter_name'>Chapter Name</h2>";
             echo "<h2 id='Ends_at'>20:00</h2>";
