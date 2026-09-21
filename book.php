@@ -21,7 +21,7 @@ $user_on_ios = preg_match('/iphone|ipad|ipod/i', $user_agent);
 
         <div class="header_right">
             <a href="main.php">Go Home</a>
-            <a href="add_the_audio_book.php">Add New Audiobook</a>
+
             <a href="index.php">Logout</a>
         </div>
     </header>
@@ -40,78 +40,17 @@ $user_on_ios = preg_match('/iphone|ipad|ipod/i', $user_agent);
     }
     else
         {echo "<div class='Master_holder'>";
-                echo "<div class='chapters_and_add_more'>";
-            echo "<div class='items'>";
-
-            echo "<h2>History</h2>";
-            echo "<button onclick='window.location.href=\"serverside/Update_the_history.php?bookID=".$_GET["book"]."\"'>Save History</button>";
-            echo "</div>";
-            echo "<div>";
-            echo "<ol id='history_list' style='list-style:none;, padding-left:0;'>";
-            $x = 0;
-            for($x = 0; $x < count($Json_Audiobook_file["type"]); $x++)
-            {//change the button
-                $y = 0;
-                
-                echo "<li class='the_chapter_buttons_and_other' id='the_chapter_buttons_and_other_$x'>";
                
-                
-              
-                echo "<button class='' id='' onclick='pick_the_chapter($x, \"history\");cap_the_timeout() '>
-                ";
-
-                echo "<h2 >".$Json_Audiobook_file["type"][$x]."</h2>";
-                echo "<div class='Times_items'> ";
-                    echo "<p id='history_start_$x'>".$Json_Audiobook_file["current_chapter_start_time"][$x]."</p>";
-                    echo "<p id='history_Chaptername_$x'>".$Json_Audiobook_file["current_chapter_name"][$x]."</p>";
-                    echo "<p id='history_End_$x'>  ".$Json_Audiobook_file["current_chapter_length"][$x]." </p>";
-                    echo "<input type='hidden' id='history_pre_seconds' value='".$Json_Audiobook_file["current_time"][$x]."'>";
-                    echo "</div>";
-                
-                
-                echo"
-
-                
-                
-                
-                </button>";
-                echo "<h2></h2>";
-
-            }
-        echo "</ol>";
-        echo "</div>";
-        echo "</div>";
-
-            echo "<div class='image_and_creaters'>";
-                echo "<img src='".$Json_Audiobook_file['cover']."'>";
-                echo "<div class='the_creaters_and_info'>"; 
-                    echo "<div>";
-                        echo "<h2>";
-                        echo $Json_Audiobook_file['author'];
-                        echo "</h2>";
-                    echo "</div>";
-                    echo "<div>";
-                        echo "<h2>";
-                        echo    $Json_Audiobook_file['narrator'];
-                        echo "</h2>";
-                    echo "</div>";
-                    echo "<div>";
-                        echo "<h2>";
-                        echo$Json_Audiobook_file['duration'];
-                        echo "</h2>";
-                    echo "</div>";
-                echo "</div>";
-            echo  "</div>";
-            echo "<div class='chapters_and_add_more'>";
+        echo "<div class='chapters_and_add_more'>";
             echo "<div>";
-            echo "<a class='items' href='add_time_stamps.php?book_id=".$ID_Code ."'>";
+            echo "<a class='items' href='add_time_stamps.php?book_id=".$ID_Code ."' style='display: grid; grid-template-columns:  30% 30% 30% ; color:inherit;'>";
             echo "<h2></h2>";
             echo "<h2>Timestamps</h2>";
             echo "<h2><butto>+ Add </button></h2>";
             echo "</a>";
             echo "</div>";
             echo "<div>";
-            echo "<ol id='chapter_list' style='list-style:none;, padding-left:0;'>";
+            echo "<ol class='chapter_list' id='chapter_list' style='list-style:none;, padding-left:0;'>";
             $x = 0;
             for($x = 0; $x < count($Json_Audiobook_file["Chapters_names"]); $x++)
             {//change the button
@@ -124,7 +63,7 @@ $user_on_ios = preg_match('/iphone|ipad|ipod/i', $user_agent);
                 echo "<button class='' id='' onclick='pick_the_chapter($x, 0),cap_the_timeout()'>
                 ";
 
-                echo "<h2 id='Chaptername_$x'>".$Json_Audiobook_file["Chapters_names"][$x]."</h2>";
+                echo "<h2 style='margin: 5px;' id='Chaptername_$x'>".$Json_Audiobook_file["Chapters_names"][$x]."</h2>";
                 echo "<div class='Times_items'>";
                     echo "<p id='start_$x'>".$Json_Audiobook_file["timestamps"][$x]."</p>";
                     echo "<p id=''>/</p>";
@@ -144,6 +83,28 @@ $user_on_ios = preg_match('/iphone|ipad|ipod/i', $user_agent);
         echo "</ol>";
         echo "</div>";
         echo "</div>";
+            //i remov
+            //echo "<div class='image_and_creaters'>";
+            //    echo "<img src='".$Json_Audiobook_file['cover']."'>";
+            //    echo "<div class='the_creaters_and_info'>"; 
+            //        echo "<div>";
+            //            echo "<h2>";
+            //            echo $Json_Audiobook_file['author'];
+            //            echo "</h2>";
+            //        echo "</div>";
+            //        echo "<div>";
+            //            echo "<h2>";
+            //            echo    $Json_Audiobook_file['narrator'];
+            //            echo "</h2>";
+            //        echo "</div>";
+            //        echo "<div>";
+            //            echo "<h2>";
+            //            echo$Json_Audiobook_file['duration'];
+            //            echo "</h2>";
+            //        echo "</div>";
+            //    echo "</div>";
+            //echo  "</div>";
+            
         echo "</div>";
         echo "<div class='audio_play'>";
         if(!$user_on_ios)
@@ -178,6 +139,50 @@ $user_on_ios = preg_match('/iphone|ipad|ipod/i', $user_agent);
                     echo "<input id='Chapter_id' style='visibility: hidden ;' value='0'>";
                     echo "<input id='book_Id' style='visibility: hidden ;' value='".$ID_Code ."'>";
         }
+
+         echo "<div class='chapters_and_add_more' style='position: relative; top:180px;' >";
+            echo "<div class='items'>";
+            echo "<button onclick='window.location.href=\"serverside/Update_the_history.php?bookID=".$_GET["book"]."\"'>Save History</button>";
+            echo "<button>Clear History</button>";
+            echo "<button disabled>Your History</button>";
+            echo "<button>Show History</button>";
+            echo "</div>";
+            echo "<div>";
+            echo "<ol class='history_list' id='history_list' style='list-style:none;, padding-left:0;'>";
+            $x = 0;
+            for($x = 0; $x < count($Json_Audiobook_file["type"]); $x++)
+            {//change the button
+                $y = 0;
+                
+                echo "<li class='the_chapter_buttons_and_other' id='the_chapter_buttons_and_other_$x'>";
+               
+                
+              
+                echo "<button class='' id='' onclick='pick_the_chapter($x, \"history\");cap_the_timeout() '>
+                ";
+
+                //echo "<h2 >".$Json_Audiobook_file["type"][$x]."</h2>";
+                echo "<div class='Times_items'> ";
+                    echo "<p id='history_start_$x' style='display:none;'>".$Json_Audiobook_file["current_chapter_start_time"][$x]."</p>";
+                    echo "<p id='history_Chaptername_$x' style='display:none;'>".$Json_Audiobook_file["current_chapter_name"][$x]."</p>";
+                    echo "<p>".$Json_Audiobook_file["type"][$x] . " at: </p>";
+                    echo "<p id='history_End_$x'>  ".$Json_Audiobook_file["current_chapter_length"][$x]." </p>";
+                    echo "<input type='hidden' id='history_pre_seconds' value='".$Json_Audiobook_file["current_time"][$x]."'>";
+                    echo "</div>";
+                
+                
+                echo"
+
+                
+                
+                
+                </button>";
+                echo "<h2></h2>";
+
+            }
+        echo "</ol>";
+        echo "</div>";
+        echo "</div>";
     ?>
     </main>
     <!--set audio place to the correct time -->

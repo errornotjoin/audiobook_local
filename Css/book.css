@@ -1,166 +1,123 @@
 .Master_holder
 {
-    display: grid;
-    grid-template-columns: 31% 35% 34%;
-    gap: 10px;
-    position: relative;
-    left: 1%;
-    width: 98%;
-}
-.chapters_and_add_more
-{
-    background-color: #142f53;
-    height: 500px;
-    overflow-y: scroll;
-    border-radius: 10px;
-}
-.the_chapter_buttons_and_other button
-{
-    width: 95%;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    display:flex;
+    display: flex;
     flex-direction: column;
-    background-color: #093672;
-    color: snow;
-    text-align: center;
-    align-items: center;
+}
+.history_list,.chapter_list
+{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+.history_list li,
+.chapter_list li
+{
+    width: auto;
+    display: inline-block;
+
+
+}
+.history_list button,
+.chapter_list button
+{
+        background-color: #0D131D;
+        color: snow;
+
+        border-radius: 15px;
 }
 .Times_items
 {
     display: flex;
-    gap: 10px;
+    flex-direction: row;
+    gap: 5px;
+}
+.history_list::-webkit-scrollbar,
+.chapter_list::-webkit-scrollbar
+{
+    height: 8px;
+}
+.history_list::-webkit-scrollbar-thumb,
+.chapter_list::-webkit-scrollbar-thumb
+{
+    background-color: #616161;
+    border-radius: 15px;
 }
 .items
 {
     display: grid;
-    grid-template-columns: 30% 40% 20%;
-    gap: 5px;
-    color: snow;
+    grid-template-columns: 25% 20% 20% 15%;
+    gap: 3%;
     text-align: center;
-    align-items: center;
-    background-color: #093672;
-}
-.image_and_creaters
-{
-    width: 100%;
 
+    height: 45px;
 }
-.image_and_creaters img
+.items button
 {
-    width: 100%;
-    height: 450px;
-    border-radius: 10px;
-}
-.the_creaters_and_info
-{
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    gap: 1%;
+    height: 30px;
     position: relative;
-    left: 0%;
-    text-align: center;
-
-
-}
-.the_creaters_and_info div
-{
-    background-color: #142f53;
-    border-radius: 10px;
-    height: 40px;
-    margin-bottom: 10px;
-}
-.the_creaters_and_info div h2
-{
+    top: 7px;
+    left: 3%;
+    background-color: #0D131D;
     color: snow;
-    text-align: center;
+    border-radius: 15px;
+}
+.items h2
+{
     position: relative;
-    bottom: 15px;
+    bottom: 10px;
 }
 .audio_play
 {
     width: 95%;
     position: relative;
-    left: 2%;
+    top:50px;
 }
 .timing_and_name
 {
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 35% 35% 35%;
+    gap: 5px;
+    width: 95%;
     text-align: center;
-    gap: 10px;
+    position: relative;
+    left: 3%;
+}
+.timing_and_name h2,.the_main_audio_items button, .User_inputs button
+{
+    background-color: #0D131D;
+    color: snow;
+}
+.the_main_audio_items
+{
+    display: grid;
+    grid-template-columns: 15% 70% 15%;  
+        gap: 5px;
+    position: relative;
+    left: 3%;
+    height: 45px;
 }
 .User_inputs
 {
     display: grid;
-    grid-template-columns: 20% 20% 20% 20%;
-
-
+    grid-template-columns: 25% 20% 20% 25% ;
+    gap: 2.5%;
+        height: 45px;
+            position: relative;
+    left: 5%;
+    top: 40px;
 }
-.User_inputs button
-{
-    width: 95%;
-    margin-bottom: 10px;
-
-    display:flex;
-    flex-direction: column;
-    background-color: #093672;
-    color: snow;
-    text-align: center;
-    align-items: center;
-    position: relative;
-    left: 52%;
-    height:  30px;
-    font-size: 20px;
-}
-
-.the_main_audio_items
-{
-    display: grid;
-    grid-template-columns: 20% 60% 20%;
-    gap: 10px;
-    position: relative;
-    left: 1%;
-    margin-bottom: 20px;
-}
-.the_main_audio_items button
-{
-    width: 95%;
-
-    border-radius: 5px;
-    display:flex;
-    flex-direction: column;
-    background-color: #093672;
-    color: snow;
-    text-align: center;
-    align-items: center;
-    height:  30px;
-}
-.outer_track
-{
+.outer_track{
     width: 100%;
-    height: 30px;
-    background-color: #093672;
+    height: 45px;
+    background-color: #0D131D;
     border-radius: 5px;
 }
 .inner_track
 {
-    width: 10%;
-    height: 30px;
-    background-color: #142f53;
+    width: 100%;
+    height: 100%;
+    background-color: #616161;
     border-radius: 5px;
-    
-}
-.timing_and_name h2 
-{
-    color: snow;
-    text-align: center;
-    background-color: #093672;
-    border-radius: 5px;
-    position: relative;
-    left: 1%;
-}
-@keyframes speed {
-    0% { width: 0%; }
-    100% { width: 100%; }
 }
