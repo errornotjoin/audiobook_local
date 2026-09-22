@@ -48,10 +48,17 @@
 {
     display: grid;
     grid-template-columns: 25% 20% 20% 15%;
+    background-color: #131f35;
     gap: 3%;
     text-align: center;
 
     height: 45px;
+    border-radius: 15px;
+}
+.items:first-of-type
+{
+    position: relative;
+    left: 2%;
 }
 .items button
 {
@@ -88,6 +95,16 @@
 {
     background-color: #0D131D;
     color: snow;
+}
+.timing_and_name h2:first-child
+{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.timing_and_name h2:last-child
+{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 .the_main_audio_items
 {

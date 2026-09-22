@@ -41,10 +41,32 @@ main
 }
 .the_holder_of_the_timestamps
 {
-    height: 500px;
+    height: 550px;
     overflow-y: scroll;
 }
 .the_holder_of_the_timestamps div
 {
     margin-bottom: 15px;
+}
+.add_more_things
+{
+    display: grid;
+    grid-template-columns:  20% 20% 20% 20%;
+    gap: 5%;
+    position: relative;
+    top: 0px;
+    left: 0%;
+    background-color: #123c77;
+    height: 55px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.add_more_things input, .add_more_things button
+{
+    background-color: #061327;
+    color: snow;
+    height: 30px;
+    position: relative;
+    top: 10px;
+    left: 5%;
 }

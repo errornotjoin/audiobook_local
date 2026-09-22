@@ -49,12 +49,10 @@
             ?>
         </div>
         <div class="add_more_things">
-            <input type="number" id="Incress_the_inputs_to_this" placeholder="Enter How Many inputs you want">
-            <button type="button" id="Add_more_inputs_button" onclick="incress_the_inputs()"> Add More Inputs</button>
             <input type="reset">
+            <input type="number" min="0" id="Incress_the_inputs_to_this" placeholder="Enter How Many inputs you want">
+            <button type="button" id="Add_more_inputs_button" onclick="incress_the_inputs()"> Add More Inputs</button>
             <input type="submit">
-
-
         </div>
     </main>
     </form>

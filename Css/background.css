@@ -22,8 +22,9 @@ header
 header .header_right 
 {
 position: relative;
-left: 2%;
+
     display: grid;
-    grid-template-columns: 31% 35% 34% ;
-    gap: 14%;
+    grid-template-columns: 45% 45%   ;
+    gap: 5%;
+    width: 95;
 }

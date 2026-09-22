@@ -15,7 +15,7 @@
     for($x = 0; $x <  $_POST["Chapters_namess"] + 1 ; $x++ )
         {
             //check if the user has removed (by emptying it) the input and to skip it
-            if(empty($_POST["Chapters_names_$x"]) || empty($_POST["timestamps_$x"] ) || empty($_POST["Chapters_lengths_$x"]))
+            if(empty($_POST["Chapters_names_$x"]) && empty($_POST["timestamps_$x"] ) || empty($_POST["Chapters_lengths_$x"]) && empty($_POST["timestamps_$x"] ))
             {
                 //if empty skip (user might have removed it by emptying the input)
 
