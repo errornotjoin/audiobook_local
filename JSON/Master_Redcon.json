@@ -1,11 +1,11 @@
 [
     {
         "ID": "cat_6aa85fea46afb",
-        "title": "cat",
-        "author": "cvat",
-        "narrator": "qwe",
+        "title": "The Restaurant At The End Of The Universe",
+        "author": "George R.R. Martin",
+        "narrator": "Simon Vance",
         "duration": "13:23:12",
-        "cover": "images\/cat_6aa85fea46afb_cover.jpg",
+        "cover": "images\/cat_6aa85fea46afb_cover.svg",
         "book_link_page": "book.php?ID=6aa85fea46afb",
         "audio_book_link": "audiobook\/cat_6aa85fea46afb_audiobook.mp3"
     }

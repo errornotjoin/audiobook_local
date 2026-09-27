@@ -20,10 +20,21 @@
     <main>
     
     <div class="Master_list">
-        
-                <a href='add_the_audio_book.php' class="images">
-                    <img src="images/add (2).svg">
-                </a>
+        <div class="header_of_optons">
+            <a href='add_the_audio_book.php' class="images">
+                <img src="images/add (2).svg">
+            </a>
+            <div class="search">
+                <input type="text" placeholder="Search...">
+                <button>Search</button>
+            </div>
+            <div class="search_results">
+                <div id="found_results"><h2>1</h2></div>
+                <div id="Total_results"><h2>/</h2></div>
+                <div id="Out_of_results"><h2>3</h2></div>
+            </div>
+        </div>
+        <div class="links_holders ">
         <?php 
         
         $Json_masterlist = file_get_contents("Json/Master_Redcon.json");
@@ -41,22 +52,33 @@
             {
                 echo "<a href='book.php?book=".$value['ID']."'>";
                 echo "<div class='Master_holder'>";
+                    echo "<div class='Master_image'>";
+                    echo "<img src='".$value['cover']."' type='image/svg+xml'>";
+                    echo "</div>";
                     echo "<div class='Master_info'>";
                         echo "<h1>".$value['title']."</h1>";
-                        echo "<div class='Master_author'>";
-                            echo "<div>";
+                    echo "</div>";
+                    echo "<div class='Master_details header_row'>";
+                            echo "<div class=''>";
                             echo "<h3>author</h3>";
-                            echo "<p>".$value['author']."</p>";
                             echo "</div>";
-                            echo "<div>";
+                            echo "<div >";
                             echo "<h3>narrator</h3>";
-                            echo "<p>".$value['narrator']."</p>";
                             echo "</div>";
-                            echo "<div>";
+                            echo "<div class=''>";
                             echo "<h3>duration</h3>";
-                            echo "<p>".$value['duration']."</p>";
                             echo "</div>";
-                        echo "</div>";
+                    echo "</div>";
+                    echo "<div class='Master_details'>";
+                            echo "<div class='frist'>";
+                            echo "<h3>".$value['author']."</h3>";
+                            echo "</div>";
+                            echo "<div class='middle_div'>";
+                            echo "<h3>".$value['narrator']."</h3>";
+                            echo "</div>";
+                            echo "<div class='last'>";
+                            echo "<h3>".$value['duration']."</h3>";
+                            echo "</div>";
                     echo "</div>";
                 echo "</div>";
                 echo "</a>";
@@ -67,6 +89,7 @@
         
         
         ?>
+        </div>
     </div>
     </main>
 </body>
