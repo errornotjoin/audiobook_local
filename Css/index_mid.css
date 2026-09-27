@@ -1,6 +1,32 @@
-.Master_list
-{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+@media (max-width: 1332px) {
+    .header_of_optons
+    {
+        display: grid;
+        grid-template-columns: 15% 55% 34%;
+        gap: 3%;
+        background-color: #0D131D;
+        height: 70px;
+        width: 60%;
+        position: relative;
+        left: 20%;
+        border-radius: 5px;
+    }
+}
+@media (max-width: 1116px) {
+    .header_of_optons
+    {
+        display: grid;
+        grid-template-columns: 25% 70%;
+        gap: 1%;
+        background-color: #0D131D;
+        height: 70px;
+        width: 85%;
+        position: relative;
+        left: 10%;
+        border-radius: 5px;
+    }
+    .search_results
+    {
+        display: none;
+    }
 }

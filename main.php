@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Css/background.css">
     <link rel="stylesheet" href="Css/home.css">
+    <link rel="stylesheet" href="Css/index_mid.css">
     <link rel="stylesheet" href="Css/index_small.css">
     <title>Home -- errornotjoin audiobooks</title>
 </head>
@@ -56,7 +57,7 @@
                     echo "<img src='".$value['cover']."' type='image/svg+xml'>";
                     echo "</div>";
                     echo "<div class='Master_info'>";
-                        echo "<h1>".$value['title']."</h1>";
+                        echo "<h1 title='".$value['title']."'>".$value['title']."</h1>";
                     echo "</div>";
                     echo "<div class='Master_details header_row'>";
                             echo "<div class=''>";
@@ -71,13 +72,13 @@
                     echo "</div>";
                     echo "<div class='Master_details'>";
                             echo "<div class='frist'>";
-                            echo "<h3>".$value['author']."</h3>";
+                            echo "<h3 title='".$value['author']."'>".$value['author']."</h3>";
                             echo "</div>";
                             echo "<div class='middle_div'>";
-                            echo "<h3>".$value['narrator']."</h3>";
+                            echo "<h3 title='".$value['narrator']."'>".$value['narrator']."</h3>";
                             echo "</div>";
                             echo "<div class='last'>";
-                            echo "<h3>".$value['duration']."</h3>";
+                            echo "<h3 title='".$value['duration']."'>".$value['duration']."</h3>";
                             echo "</div>";
                     echo "</div>";
                 echo "</div>";
