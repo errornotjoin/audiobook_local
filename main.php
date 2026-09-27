@@ -30,11 +30,17 @@
                 <button>Search</button>
             </div>
             <div class="search_results">
-                <div id="found_results"><h2>1</h2></div>
-                <div id="Total_results"><h2>/</h2></div>
-                <div id="Out_of_results"><h2>3</h2></div>
+                        <?php 
+        $Json_masterlist = file_get_contents("Json/Master_Redcon.json");
+        $Json_masterlist = json_decode($Json_masterlist, true);
+        $found_results = count($Json_masterlist);
+        ?>
+                <div id="found_results"><h2></h2></div>
+                <div id="Total_results"><h2>/ </h2></div>
+                <div id="Out_of_results"><h2><?php echo $found_results; ?></h2></div>
             </div>
         </div>
+            <script src="javascript/count_up.js"></script>
         <div class="links_holders ">
         <?php 
         
@@ -49,8 +55,10 @@
         }
         else
         {   
+
             foreach($Json_masterlist as $key => $value)
             {
+            echo "<script>countUp(".$found_results.");</script>";
                 echo "<a href='book.php?book=".$value['ID']."'>";
                 echo "<div class='Master_holder'>";
                     echo "<div class='Master_image'>";
@@ -93,5 +101,7 @@
         </div>
     </div>
     </main>
+
+
 </body>
 </html>
