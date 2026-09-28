@@ -83,7 +83,7 @@ $user_on_ios = preg_match('/iphone|ipad|ipod/i', $user_agent);
         echo "</ol>";
         echo "</div>";
         echo "</div>";
-            //i remov
+            //i removd this as it no longer needed
             //echo "<div class='image_and_creaters'>";
             //    echo "<img src='".$Json_Audiobook_file['cover']."'>";
             //    echo "<div class='the_creaters_and_info'>"; 

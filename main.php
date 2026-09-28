@@ -25,10 +25,10 @@
             <a href='add_the_audio_book.php' class="images">
                 <img src="images/add (2).svg">
             </a>
-            <div class="search">
-                <input type="text" placeholder="Search...">
-                <button>Search</button>
-            </div>
+            <form  class="search" action="main.php" method="get">
+                <input type="text" name="search" placeholder="Search Titles">
+                <button type="submit">Search</button>
+            </form>
             <div class="search_results">
                         <?php 
         $Json_masterlist = file_get_contents("Json/Master_Redcon.json");
@@ -37,14 +37,14 @@
         ?>
                 <div id="found_results"><h2></h2></div>
                 <div id="Total_results"><h2>/ </h2></div>
-                <div id="Out_of_results"><h2><?php echo $found_results; ?></h2></div>
+                <div id="Out_of_results"><h2 id="total"><?php echo $found_results; ?></h2></div>
             </div>
         </div>
             <script src="javascript/count_up.js"></script>
         <div class="links_holders ">
         <?php 
         
-        $Json_masterlist = file_get_contents("Json/Master_Redcon.json");
+        $Json_masterlist = file_get_contents("JSON/Master_Redcon.json");
         $Json_masterlist = json_decode($Json_masterlist, true);
         if($Json_masterlist == null)
         {
@@ -58,7 +58,15 @@
 
             foreach($Json_masterlist as $key => $value)
             {
-            echo "<script>countUp(".$found_results.");</script>";
+            if(!isset($_GET["search"]) )
+            {
+                $_GET["search"] = "";
+            }
+            if(!str_contains(strtolower($value['title']), strtolower($_GET["search"]))) {
+                continue;
+            }
+            else{
+            echo "<script>countUp();</script>";
                 echo "<a href='book.php?book=".$value['ID']."'>";
                 echo "<div class='Master_holder'>";
                     echo "<div class='Master_image'>";
@@ -92,6 +100,7 @@
                 echo "</div>";
                 echo "</a>";
             }
+        }
         }
         
         
