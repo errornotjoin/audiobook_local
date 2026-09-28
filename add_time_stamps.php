@@ -41,8 +41,8 @@
                         
 
                         echo "<input type='text' name='Chapters_names_$x' value='".$Json_Audiobook_file["Chapters_names"][$x] ."'>";
-                        echo "<input type='text' name='timestamps_$x' value='".$Json_Audiobook_file["timestamps"][$x] ."'pattern=[0-5][0-9]:[0-5][0-9]:[0-5][0-9]>";
-                        echo "<input type='input' name='Chapters_lengths_$x' value='".$Json_Audiobook_file["Chapters_lengths"][$x] ."'pattern=[0-5][0-9]:[0-5][0-9]:[0-5][0-9]>";
+                        echo "<input type='text' placeholder='Start Time (HH:MM:SS)' name='timestamps_$x' value='".$Json_Audiobook_file["timestamps"][$x] ."'pattern=[0-5][0-9]:[0-5][0-9]:[0-5][0-9]>";
+                        echo "<input type='input' placeholder='Length (HH:MM:SS)' name='Chapters_lengths_$x' value='".$Json_Audiobook_file["Chapters_lengths"][$x] ."'pattern=[0-5][0-9]:[0-5][0-9]:[0-5][0-9]>";
                         echo "</div>";
                     }
                 echo "<input type='hidden' id='Chapters_names' name='Chapters_namess' value='".  count($Json_Audiobook_file["Chapters_names"])."' >";

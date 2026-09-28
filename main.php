@@ -1,4 +1,6 @@
+<?php
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,6 +45,14 @@
             <script src="javascript/count_up.js"></script>
         <div class="links_holders ">
         <?php 
+            if(!isset($_GET["search"]) || empty($_GET["search"]) )
+            {
+                $Search = "";
+            }
+            else
+            {
+                $Search = $_GET["search"];
+            }
         
         $Json_masterlist = file_get_contents("JSON/Master_Redcon.json");
         $Json_masterlist = json_decode($Json_masterlist, true);
@@ -55,17 +65,11 @@
         }
         else
         {   
+            
+        foreach($Json_masterlist as $key => $value)
+            {
 
-            foreach($Json_masterlist as $key => $value)
-            {
-            if(!isset($_GET["search"]) )
-            {
-                $_GET["search"] = "";
-            }
-            if(!str_contains(strtolower($value['title']), strtolower($_GET["search"]))) {
-                continue;
-            }
-            else{
+            if(str_contains(strtolower($value['title']), strtolower($Search))) {
             echo "<script>countUp();</script>";
                 echo "<a href='book.php?book=".$value['ID']."'>";
                 echo "<div class='Master_holder'>";
@@ -100,6 +104,10 @@
                 echo "</div>";
                 echo "</a>";
             }
+            else
+                {
+                    continue;
+                }
         }
         }
         

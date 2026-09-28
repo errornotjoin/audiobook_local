@@ -11,7 +11,7 @@ function pick_the_chapter(chapter_id,type) {
     var chapter_length= " "
     var chapter_start = " "
     var list_of_ui_value = [];
-    if(type === "history" && type !== undefined) {
+    if(type === "history" ) {
         
         chapter_name   = document.getElementById("history_Chaptername_" + chapter_id);
         chapter_length = document.getElementById("history_End_" + chapter_id);
