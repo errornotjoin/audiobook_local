@@ -1,4 +1,4 @@
-window.onload = function () {
+window.onloadedmetadata = function () {
 
     var history = document.getElementById("history_list").children;
     if (history.length > 0) {

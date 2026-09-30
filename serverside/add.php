@@ -1,5 +1,5 @@
 <?php
-
+require_once 'upload_audiofiles.php';
 
 
 // change me to the correct path to the upload directory
@@ -43,6 +43,11 @@ $cover_art_info =
     "tmp_name" => $cover_art_file['tmp_name'],
     "error" => $cover_art_file['error']
 ];
+//maths 
+$max_file_size = 400 * 1024 * 1024; 
+// 400  = (change this to the value you want in MB) 
+// 1024 = 1 KB and times 1024 again gives 1 MB
+
 
 // i moved this to the here beacuse i need to accese and change it (add or remove )
 // look at create_new_json_file() for any changes 
@@ -92,17 +97,20 @@ function Update_names($audiobook_info,$cover_art_info,  $unique_id, $update_titl
         catch(Exception $e)
         {
             header("Location: ../main.php?Error=01");
+            exit();
 
 
         }
 
 }
-function upload_to_file($audiobook_info, $cover_art_info, $upload_directory_audiobook, $upload_directory_cover)
+function upload_to_file($audiobook_info, $cover_art_info, $upload_directory_audiobook, $upload_directory_cover, $max_file_size)
 {
          try{
     // Upload the audiobook and cover art files to the server
-    move_uploaded_file($audiobook_info['tmp_name'], $upload_directory_audiobook . $audiobook_info['name']);
+   
     move_uploaded_file($cover_art_info['tmp_name'], $upload_directory_cover . $cover_art_info['name']);
+    move_uploaded_file($audiobook_info['tmp_name'], $upload_directory_audiobook . $audiobook_info['name']);
+
     echo "completed uploading files";
     }catch(Exception $e)
     {
@@ -178,7 +186,7 @@ function create_temp_history($format_for_Temp_json, $Json_temp_history_location,
 }
 
 //this is the correct order 
-upload_to_file($audiobook_info, $cover_art_info, $upload_directory_audiobook, $upload_directory_cover);
+upload_to_file($audiobook_info, $cover_art_info, $upload_directory_audiobook, $upload_directory_cover, $max_file_size);
 add_data_to_master_list($format_for_json, $Json_master_list);
 create_new_json_file($format_for_json, $json_audiobook_localtion, $title, $create_unique_id);
 create_temp_history($format_for_Temp_json, $Json_temp_history_location, $title, $create_unique_id);

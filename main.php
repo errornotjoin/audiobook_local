@@ -28,7 +28,7 @@
                 <img src="images/add (2).svg">
             </a>
             <form  class="search" action="main.php" method="get">
-                <input type="text" name="search" placeholder="Search Titles">
+                <input  maxlength="3" type="text" name="search" placeholder="Search Titles">
                 <button type="submit">Search</button>
             </form>
             <div class="search_results">

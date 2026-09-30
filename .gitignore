@@ -1,4 +1,9 @@
+
 images/
 audiobook/
 the_audiobook_info/
+
+temporary saved data
 tmp_files/
+you need to add your own sensitive ftp login information here
+login/

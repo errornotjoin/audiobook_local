@@ -28,27 +28,37 @@
         </div>
     </div>
     -->
-    
-    <form action="serverside/add.php" method="post"  enctype="multipart/form-data"  >
+    <div class="muilt_loading" style="display: none;">
+        <div id="for_loading"  >
+            <div class="inner_loading">
+
+            </div>
+
+        </div>
+        <h2>Loading...</h2>
+
+    </div>
+    <form  id="forms" action="serverside/add.php" method="post"  enctype="multipart/form-data"  >
         <div class="main_items">
             <input class="Title" type="text" name="title" placeholder="Enter the title of the audiobook" required>
             <div class="some_info">
                 <input type="text" name="author" placeholder="Enter the author of the audiobook" required>
-                <input type="text" name="narrator" placeholder="Enter the narrator of the audiobook" required>
+                <input id="narrator" type="text" name="narrator" placeholder="Enter the narrator of the audiobook" required>
                 <input type="date" name="release_date" placeholder="Enter the release date of the audiobook" required>
                 <input type="text" name="duration" placeholder="00:00:00" pattern='[0-5][0-9]:[0-5][0-9]:[0-5][0-9]' required>
             </div>
             
             <div class="file_upload">
-                <input type="file" name="audiobook_upload" accept=".mp3,.m4a, .opus" required  title="Upload the audiobook file">
+                <input id="file_audio" type="file" name="audiobook_upload" accept=".mp3,.m4a, .opus" required  title="Upload the audiobook file">
                 <input type="file" name="cover_art" accept=".jpg,.svg,.png" required>
             </div>
         </div>
         <div class="next_step">
             <button type="reset" value="Reset">Reset</button>
-            <button type="submit">Submit</button>
+            <button onclick="loading()" type="submit">Submit</button>
         </div> 
     </form>
+    <script src="javascript/loading.js"></script>
     
 </body>
 </html>
