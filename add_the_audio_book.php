@@ -59,6 +59,6 @@
         </div> 
     </form>
     <script src="javascript/loading.js"></script>
-    
+    <script src="javascript/chunk.js"></script>
 </body>
 </html>
