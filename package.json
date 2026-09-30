@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "@uppy/core": "^6.1.0",
-    "@uppy/dashboard": "^6.0.0",
-    "@uppy/xhr-upload": "^6.0.0"
-  }
-}

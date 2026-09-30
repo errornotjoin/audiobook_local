@@ -49,13 +49,13 @@
             </div>
             
             <div class="file_upload">
-                <input id="file_audio" type="file" name="audiobook_upload" accept=".mp3,.m4a, .opus" required  title="Upload the audiobook file">
+                <input id="file_audio" type="file"  accept=".m4a," required  title="Upload the audiobook file">
                 <input type="file" name="cover_art" accept=".jpg,.svg,.png" required>
             </div>
         </div>
         <div class="next_step">
             <button type="reset" value="Reset">Reset</button>
-            <button onclick="loading()" type="submit">Submit</button>
+            <button onclick="loading()" id="disable_this" type="submit">Submit</button>
         </div> 
     </form>
     <script src="javascript/loading.js"></script>
